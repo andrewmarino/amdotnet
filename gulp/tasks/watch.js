@@ -14,20 +14,20 @@ import browserSync from 'browser-sync';
 
 gulp.task('watch', () => {
 
-    gulp.watch(config.sass.watch, ['sass']);
+  gulp.watch(config.sass.watch, ['sass']);
 
-    gulp.watch([
-        config.images.srcRaster,
-        config.images.srcSvg
-    ], ['images']);
+  gulp.watch([
+    config.images.srcRaster,
+    config.images.srcSvg
+  ], ['images']);
 
-    gulp.watch([
-      config.templates.srcTemplates,
-      config.templates.srcSnippets
-    ])
-      .on('change', browserSync.reload);
+  gulp.watch([
+    config.templates.srcTemplates,
+    config.templates.srcSnippets
+  ])
+  .on('change', browserSync.reload);
 
-    // Watch tasks not directly watched by gulp.watch
-    gulp.start(['js:watchify']);
+  // Watch tasks not directly watched by gulp.watch
+  gulp.start(['js:watchify']);
 
 });

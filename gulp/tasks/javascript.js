@@ -10,6 +10,7 @@
 
 import gulp from 'gulp';
 import size from 'gulp-size';
+import uglify from 'gulp-uglify';
 import gutil from 'gulp-util';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
@@ -33,28 +34,26 @@ let w;
  */
 gulp.task('js', () => {
 
-    let pipeline = browserify(options)
+  let pipeline = browserify(options)
 
-        .transform(babelify)
-        .bundle()
+    .transform(babelify)
+    .bundle()
 
-        .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
 
-        .pipe(source(config.js.outputFilename))
-        .pipe(buffer())
+    .pipe(source(config.js.outputFilename))
+    .pipe(buffer())
+    .pipe(uglify())
 
-        .pipe(size({
-            showFiles: config.size.showFiles,
-            gzip: config.size.gzip,
-            title: "JS sizes:"
-        }))
+    .pipe(size({
+      showFiles: config.size.showFiles,
+      gzip: config.size.gzip,
+      title: "JS sizes:"
+    }))
 
-        .pipe(sourcemaps.init({ loadMaps: true }))
-        .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(config.js.dest));
 
-        .pipe(gulp.dest(config.js.dest));
-
-    return pipeline;
+  return pipeline;
 
 });
 
@@ -68,37 +67,37 @@ gulp.task('js:watchify', bundlify);
 
 function bundlify() {
 
-    w = w || getWatchifyInstance();
+  w = w || getWatchifyInstance();
 
-    let pipeline = w
+  let pipeline = w
 
-        .bundle()
+    .bundle()
 
-        .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
 
-        .pipe(source(config.js.outputFilename))
-        .pipe(buffer())
+    .pipe(source(config.js.outputFilename))
+    .pipe(buffer())
 
-        .pipe(sourcemaps.init({ loadMaps: true }))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(config.js.dest));
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(config.js.dest));
 
-    return pipeline;
+  return pipeline;
 
 };
 
 function getWatchifyInstance () {
 
-    // Open the watchify stream if not already set
-    // and bind update/log events.
+  // Open the watchify stream if not already set
+  // and bind update/log events.
 
-    if (!w) {
-        w = watchify(browserify(options));
-        w.transform(babelify);
-        w.on('update', bundlify);
-        w.on('log', gutil.log);
-    }
+  if (!w) {
+    w = watchify(browserify(options));
+    w.transform(babelify);
+    w.on('update', bundlify);
+    w.on('log', gutil.log);
+  }
 
-    return w;
+  return w;
 
 }
