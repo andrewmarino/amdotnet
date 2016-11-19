@@ -14,7 +14,7 @@ import browserSync from 'browser-sync';
 
 gulp.task('watch', () => {
 
-  gulp.watch(config.sass.watch, ['sass']);
+  gulp.watch(config.css.watch, ['css']);
 
   gulp.watch([
     config.images.srcRaster,

@@ -15,23 +15,14 @@ module.exports = {
   dest: dest,
   src: src,
 
-  bump: {
-    src: [
-      './package.json'
-    ]
-  },
-  sass: {
-    src: src + '/sass/main.scss',
+  css: {
+    src: src + '/css/main.css',
     dest: assets + '/css/',
     basename: 'styles',
-    watch: src + '/sass/**/*',
+    watch: src + '/css/**/*',
     autoprefixer: {
       browsers: [
-        'last 2 version',
-        'safari 7',
-        'ie 9',
-        'ios 7',
-        'android 4'
+        'last 2 version'
       ]
     }
   },
