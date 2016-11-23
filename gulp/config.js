@@ -10,7 +10,6 @@ const src = './src';
 const assets = dest + '/assets'
 
 module.exports = {
-
   pkg: pkg,
   dest: dest,
   src: src,
@@ -19,12 +18,7 @@ module.exports = {
     src: src + '/css/main.css',
     dest: assets + '/css/',
     basename: 'styles',
-    watch: src + '/css/**/*',
-    autoprefixer: {
-      browsers: [
-        'last 2 version'
-      ]
-    }
+    watch: src + '/css/**/*'
   },
   js: {
     dest: assets + '/js',
