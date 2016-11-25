@@ -1,0 +1,95 @@
+html {
+  font-size: 100%;
+
+  @media (--breakpoint-large) {
+    font-size: 125%;
+  }
+}
+
+body {
+  background-color: var(--nearest-white);
+  color: var(--eigengrau);
+}
+
+h1, h2, h3, h4, h5, h6, .subtitle {
+  font-family: 'rift', sans-serif;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--dark-green);
+}
+
+a:hover,
+a:focus {
+  position: relative;
+  outline: none;
+}
+
+a[href^="http"]:not([href*="local.am.dev"])::after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  content: '(external link)';
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+p a:hover,
+p a:focus {
+  background-color: rgba(19,119,82,.25);
+  color: var(--eigengrau);
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--eigengrau);
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: calc(100% + 1em);
+    height: calc(100% + 1em);
+    background-color: rgba(19,119,82,.25);
+  }
+}
+
+code {
+  color: var(--dark-red);
+
+  @media (--breakpoint-large) {
+    font-size: 90%;
+  }
+}
+
+pre {
+  padding-left: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  overflow-x: scroll;
+
+  @media (--breakpoint-large) {
+    font-size: 80%;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+::selection {
+  background-color: var(--dark-green);
+  color: var(--near-white);
+}

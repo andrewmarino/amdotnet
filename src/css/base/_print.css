@@ -1,0 +1,9 @@
+@media print {
+  body {
+    background-color: var(--white);
+  }
+
+  body > *:not(main) {
+    display: none;
+  }
+}
