@@ -1,33 +1,27 @@
-<?php snippet('header') ?>
-
-  <main class="main" role="main">
-
-    <h1><?php echo $page->title()->html() ?></h1>
-
-    <ul class="meta cf">
-      <li><b>Year:</b> <time datetime="<?php echo $page->date('c') ?>"><?php echo $page->date('Y', 'year') ?></time></li>
-      <li><b>Tags:</b> <?php echo $page->tags() ?></li>
-    </ul>
-
-    <div class="text">
-      <?php echo $page->text()->kirbytext() ?>
-
-      <?php foreach($page->images()->sortBy('sort', 'asc') as $image): ?>
-      <figure>
-        <img src="<?php echo $image->url() ?>" alt="<?php echo $page->title()->html() ?>">
-      </figure>
-      <?php endforeach ?>
-    </div>
-
-    <nav class="nextprev cf" role="navigation">
-      <?php if($prev = $page->prevVisible()): ?>
-      <a class="prev" href="<?php echo $prev->url() ?>">&larr; previous</a>
-      <?php endif ?>
-      <?php if($next = $page->nextVisible()): ?>
-      <a class="next" href="<?php echo $next->url() ?>">next &rarr;</a>
-      <?php endif ?>
-    </nav>
-
-  </main>
-
-<?php snippet('footer') ?>
+<?php snippet('header'); ?>
+<main class="main" role="main">
+  <header class="mw7-ns lh-copy f5 mt5-ns">
+    <h1 class="f1-ns f2 mb0"><?php echo $page->title() ?></h1>
+    <?php if($page->text()) echo $page->text()->kirbytext() ?>
+  </header>
+  <section>
+  <?php foreach($page->images()->sortBy('sort', 'asc') as $photo): ?>
+    <?php
+      $size = $photo->gridlayout()->value;
+      $location = $photo->location()->value;
+    ?>
+    <figure class="lazy ma0 mt5 <?= $size == '6x7' ? 'mw7-ns' : 'mw6-ns'; ?>" data-expand="-90">
+      <div>
+        <img class="lazyload" data-src="<?php echo $photo->url() ?>" alt="<?php echo $photo->alt() ?>"/>
+      </div>
+      <?php if($location) : ?>
+      <figcaption class="pv3 pl3 mt2 bl bw2">
+        <span class="sr-only">Photo taken in: </span><span class="db f5"><?php echo $photo->location() ?></span>
+        <time class="db mt2 f6 subtitle"><?php echo $photo->year() ?></time>
+      </figcaption>
+      <?php endif; ?>
+    </figure>
+  <?php endforeach; ?>
+  </section>
+</main>
+<?php snippet('footer'); ?>
