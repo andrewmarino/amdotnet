@@ -4,6 +4,6 @@
         <em>Photographs are © 2016, and may not be reproduced without permission.</em>
       </div>
     </footer>
-    <?php echo js('assets/js/scripts.min.js'); ?>
+    <?= mix('/scripts/main.js'); ?>
   </body>
 </html>
