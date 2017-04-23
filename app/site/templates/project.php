@@ -10,9 +10,9 @@
       $size = $photo->gridlayout()->value;
       $location = $photo->location()->value;
     ?>
-    <figure class="lazy ma0 mt5 <?= $size == '6x7' ? 'mw7-ns' : 'mw6-ns'; ?>" data-expand="-90">
+    <figure class="ma0 mt5 mw6-ns">
       <div>
-        <img class="lazyload" data-src="<?php echo $photo->url() ?>" alt="<?php echo $photo->alt() ?>"/>
+        <img class="lazy lazyload" data-expand="-10" data-src="<?php echo $photo->url() ?>" alt="<?php echo $photo->alt() ?>">
       </div>
       <?php if($location) : ?>
       <figcaption class="pv3 pl3 mt2 bl bw2">
