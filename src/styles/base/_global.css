@@ -93,3 +93,13 @@ pre {
   background-color: var(--dark-green);
   color: var(--near-white);
 }
+
+
+.lazy {
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+.lazy.lazyloaded {
+  opacity: 1;
+}

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $site->title()->html(); ?> | <?php echo $page->title()->html(); ?></title>
     <meta name="description" content="<?php echo $site->description()->html(); ?>">
-    <?php echo css('assets/css/styles.min.css'); ?>
+    <?= mix('/styles/main.css'); ?>
     <?php snippet('typekit'); ?>
   </head>
   <body class="body sans-serif ph5-l ph4-m pa3">
