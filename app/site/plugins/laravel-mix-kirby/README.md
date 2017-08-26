@@ -10,7 +10,7 @@ You should also install [Laravel Mix](https://github.com/JeffreyWay/laravel-mix)
 
 1. If you haven't already, create a `package.json` inside your project root: `npm init -y`
 2. Install Laravel Mix: `npm install laravel-mix --save-dev`
-3. Move the `webpack.config.js` and `webpack.mix.js` files into your root: `cp -r node_modules/laravel-mix/setup/** ./`
+3. Move the `webpack.mix.js` file into your root: `cp -r node_modules/laravel-mix/setup/webpack.mix.js ./`
 
 After that you can start using Laravel Mix in your project.
 
@@ -20,10 +20,10 @@ You should add the following NPM scripts to your `package.json` to speed up your
 
 ```json
 "scripts": {
-  "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
-  "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules",
-  "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
-}
+    "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  }
 ```
 
 
@@ -50,16 +50,16 @@ I keep my source files outside the `kirby` (or `dist`) directory but you may hav
   |- ...
 ```
 
-With that setup I start with the following `webpack.mix.js`:
+With that setup you can start out with the following `webpack.mix.js`:
 
 ```js
 mix.setPublicPath('kirby/assets/')
-mix.browserSync('my-website.dev')
-mix.sourceMaps()
-   .js('src/js/main.js', 'kirby/assets/js/')
-   .sass('src/css/main.scss', 'kirby/assets/css')
+mix.js('src/js/main.js', 'kirby/assets/js/')
+   .sass('src/css/main.scss', './css')
    .version();
 ```
+
+You can do a lot more but this. For example I'm also setting up BrowserSync and TypeScript support in my projects. The above configuration will get you started just fine though.
 
 When you run `npm run dev` your `main.js` and `main.css` files will be created. They will also be versioned which makes referencing them via the standard `css()` and `js()` methods pretty tedious. That’s where the helper function comes in (and thus this entire plugin).
 
@@ -71,11 +71,11 @@ The `mix()` helper function reads the `mix-manifest.json` file and returns the r
 <head>
   // ...
 
-  <?= mix('/css/main.css') ?>
+  <?= mix('css/main.css') ?>
 </head>
 
 // snippets/footer.php
-  <?= mix('/js/main.js') ?>
+  <?= mix('js/main.js') ?>
 </body>
 </html>
 ```
@@ -86,12 +86,12 @@ And that's it, actually.
 
 In your `site/config/config.php` you can set two options to make this helper work with your specific setup:
 
-#### `mix.manifest`
+#### `mixManifestPath`
 This is where the helper function will look for the manifest created by Laravel Mix.
 
 Default: `assets/mix-manifest.json`
 
-#### `mix.assets`
+#### `mixAssetsPath`
 This will be prepended to the individual file paths given to the `mix()` function when creating the final HTML tags.
 
 Default: `assets`

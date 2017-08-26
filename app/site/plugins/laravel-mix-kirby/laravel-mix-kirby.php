@@ -2,7 +2,7 @@
 /**
  * Laravel Mix helper for the Kirby CMS
  *
- * @version   1.0.0
+ * @version   1.1.0
  * @author    Robert Cordes <robert@diverently.com>
  */
 
@@ -20,7 +20,7 @@ if (! function_exists('mix')) {
     static $mixFileLink;
 
     $manifest_path = c::get('mix.manifest', 'assets/mix-manifest.json');
-    $assets_path = c::get('mix.assets', '/assets/');
+    $assets_path = c::get('mix.assets', 'assets');
 
     if (str::startsWith($manifest_path, '/')) {
       $manifest_path = str::substr($manifest_path, 1);
@@ -30,37 +30,32 @@ if (! function_exists('mix')) {
       $assets_path = "/{$assets_path}";
     }
 
-    if (! str::endsWith($assets_path, '/')) {
-      $assets_path = "{$assets_path}/";
+    if (str::endsWith($assets_path, '/')) {
+      $assets_path = str::substr($assets_path, -1);
     }
 
     if (! $manifest) {
       if (! f::exists($manifest_path)) {
-        // @TODO Throw an error in debug mode
-        // return response::error("The Mix manifest does not exist.", 404);
-        return false;
+        trigger_error("The Mix manifest does not exist");
       }
 
       $manifest = str::parse(f::read($manifest_path), 'json');
     }
 
     if (! array_key_exists($path, $manifest)) {
-      // @TODO Throw an error in debug mode
-      // "Unable to locate Mix file: {$path}. Please check your ".
-      // "webpack.mix.js output paths and try again."
-      return false;
+      trigger_error("Unable to locate Mix file: {$path}. Please check your webpack.mix.js output paths and try again.");
     }
 
     $mixFilePath = $assets_path . $manifest[$path];
-    $pathExtension = f::extension($mixFilePath);
+    $url = parse_url($mixFilePath);
+    $pathExtension = pathinfo($url['path'], PATHINFO_EXTENSION);
 
     if ('css' === $pathExtension) {
       $mixFileLink = css($mixFilePath);
     } elseif ('js' === $pathExtension) {
       $mixFileLink = js($mixFilePath);
     } else {
-      // @TODO Throw an error
-      // "File type not recognized"
+      trigger_error("File type not recognized");
       return false;
     }
 
