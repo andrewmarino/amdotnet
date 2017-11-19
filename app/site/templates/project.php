@@ -1,33 +1,21 @@
-<?php snippet('header') ?>
-
-  <main class="main" role="main">
-
-    <h1><?php echo $page->title()->html() ?></h1>
-
-    <ul class="meta cf">
-      <li><b>Year:</b> <time datetime="<?php echo $page->date('c') ?>"><?php echo $page->date('Y', 'year') ?></time></li>
-      <li><b>Tags:</b> <?php echo $page->tags() ?></li>
-    </ul>
-
-    <div class="text">
-      <?php echo $page->text()->kirbytext() ?>
-
-      <?php foreach($page->images()->sortBy('sort', 'asc') as $image): ?>
-      <figure>
-        <img src="<?php echo $image->url() ?>" alt="<?php echo $page->title()->html() ?>">
-      </figure>
-      <?php endforeach ?>
-    </div>
-
-    <nav class="nextprev cf" role="navigation">
-      <?php if($prev = $page->prevVisible()): ?>
-      <a class="prev" href="<?php echo $prev->url() ?>">&larr; previous</a>
-      <?php endif ?>
-      <?php if($next = $page->nextVisible()): ?>
-      <a class="next" href="<?php echo $next->url() ?>">next &rarr;</a>
-      <?php endif ?>
-    </nav>
-
-  </main>
-
-<?php snippet('footer') ?>
+<?php snippet('header'); ?>
+<main class="main">
+  <header class="mw7-ns lh-copy f5 mt5-ns">
+    <h1 class="f1-ns f2 mb0"><?= $page->title(); ?></h1>
+    <?php if($page->text()) echo $page->text()->kirbytext(); ?>
+  </header>
+  <section>
+    <?php foreach($page->images()->sortBy('sort', 'asc') as $photo): ?>
+    <picture class="db ma0 mt5">
+      <source data-srcset="<?= thumb($photo, ['width' => 475, 'quality' => 80])->url(); ?>, <?= thumb($photo, ['width' => 800, 'quality' => 80])->url(); ?> 2x" media="(min-width: 768px)">
+      <img
+        class="lazy lazyload"
+        data-expand="-10"
+        data-src="<?= thumb($photo, ['width' => 475, 'quality' => 80])->url(); ?>"
+        alt="<?= $photo->alt() ?>"
+      />
+    </picture>
+    <?php endforeach; ?>
+  </section>
+</main>
+<?php snippet('footer'); ?>

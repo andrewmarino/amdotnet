@@ -1,22 +1,12 @@
-<nav role="navigation">
-
-  <ul class="menu cf">
-    <?php foreach($pages->visible() as $p): ?>
+<nav class="dib">
+  <ul class="list pa0 mt1 f5 fw6">
     <li>
-      <a <?php e($p->isOpen(), ' class="active"') ?> href="<?php echo $p->url() ?>"><?php echo $p->title()->html() ?></a>
-
-      <?php if($p->hasVisibleChildren()): ?>
-      <ul class="submenu">
-        <?php foreach($p->children()->visible() as $p): ?>
-        <li>
-          <a href="<?php echo $p->url() ?>"><?php echo $p->title()->html() ?></a>
-        </li>
-        <?php endforeach ?>
-      </ul>
-      <?php endif ?>
-
+      <a class="dib mb2 f4" href="<?= url() ?>"><?= $site->title()->html() ?></a>
+    </li>
+    <?php foreach($pages->visible() as $p): ?>
+    <li class="dib mr3 mt2">
+      <a class="<?php e($p->isOpen(), 'active underline') ?>" href="<?php echo $p->url() ?>"><?php echo $p->title()->html() ?></a>
     </li>
     <?php endforeach ?>
   </ul>
-
 </nav>

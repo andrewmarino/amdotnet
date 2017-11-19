@@ -1,9 +1,8 @@
-  <footer role="contentinfo">
-    &copy; <?php echo date('Y'); ?>
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.2.2.min.js"><\/script>')</script>
-
-  <?php echo js('assets/js/scripts.min.js') ?>
-</body>
+    <footer class="mt4 f6">
+      <div class="mw7-ns ma0 pv2">
+        <small>Photographs are © <?= date('Y'); ?>, and may not be reproduced without permission.</small>
+      </div>
+    </footer>
+    <?= mix('/scripts/main.js'); ?>
+  </body>
 </html>
