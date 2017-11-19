@@ -1,8 +1,12 @@
+import FontFaceObserver from 'fontfaceobserver';
+
 export default {
-  init() {
-    // JavaScript to be fired on all pages
-  },
+  init() {},
   finalize() {
-    // JavaScript to be fired on all pages, after page specific JS is fired
-  },
+    var barlow = new FontFaceObserver('Barlow');
+
+    barlow.load().then(function() {
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  }
 };

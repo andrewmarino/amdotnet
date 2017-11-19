@@ -6,13 +6,18 @@ html {
   }
 }
 
+
 body {
   background-color: var(--nearest-white);
   color: var(--eigengrau);
 }
 
+.fonts-loaded body {
+  font-family: 'Barlow', sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6, .subtitle {
-  font-family: 'rift', sans-serif;
+  font-weight: 600;
 }
 
 a {
@@ -25,15 +30,37 @@ a:hover,
 a:focus {
   position: relative;
   outline: none;
+  text-decoration: underline;
 }
 
-a[href^="http"]:not([href*="local.am.dev"])::after {
+a[href^="http"]:not([href*="local.am.dev"])::after,
+a[href^="https"]:not([href*="andrewmarino.net"])::after {
   display: inline-block;
   width: 0;
   height: 0;
   content: '(external link)';
   overflow: hidden;
   white-space: nowrap;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Forgot required alt attribute.
+img:not([alt]) {
+  border: 5px solid #c00;
+}
+
+picture {
+  max-width: 475px;
+  background-color: var(--silver);
+
+  > img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 p a {
@@ -48,6 +75,7 @@ p a:focus {
 
 nav a:hover,
 nav a:focus {
+  text-decoration: none;
   color: var(--eigengrau);
 
   &:before {
@@ -59,25 +87,6 @@ nav a:focus {
     width: calc(100% + 1em);
     height: calc(100% + 1em);
     background-color: rgba(19,119,82,.25);
-  }
-}
-
-code {
-  color: var(--dark-red);
-
-  @media (--breakpoint-large) {
-    font-size: 90%;
-  }
-}
-
-pre {
-  padding-left: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  overflow-x: scroll;
-
-  @media (--breakpoint-large) {
-    font-size: 80%;
   }
 }
 
@@ -94,8 +103,8 @@ pre {
   color: var(--near-white);
 }
 
-
-.lazy {
+.lazy,
+.lazyloading {
   opacity: 0;
   transition: opacity 400ms;
 }
