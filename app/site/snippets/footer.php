@@ -3,6 +3,6 @@
         <small>Photographs are © <?= date('Y'); ?>, and may not be reproduced without permission.</small>
       </div>
     </footer>
-    <?= mix('/scripts/main.js'); ?>
+    <script type="text/javascript" src="<?= mix('/scripts/main.js'); ?>" async></script>
   </body>
 </html>

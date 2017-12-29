@@ -46,18 +46,7 @@ if (! function_exists('mix')) {
       trigger_error("Unable to locate Mix file: {$path}. Please check your webpack.mix.js output paths and try again.");
     }
 
-    $mixFilePath = $assets_path . $manifest[$path];
-    $url = parse_url($mixFilePath);
-    $pathExtension = pathinfo($url['path'], PATHINFO_EXTENSION);
-
-    if ('css' === $pathExtension) {
-      $mixFileLink = css($mixFilePath);
-    } elseif ('js' === $pathExtension) {
-      $mixFileLink = js($mixFilePath);
-    } else {
-      trigger_error("File type not recognized");
-      return false;
-    }
+    $mixFileLink = $assets_path . $manifest[$path];
 
     return $mixFileLink;
   }
