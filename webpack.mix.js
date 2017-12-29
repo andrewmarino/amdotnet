@@ -17,22 +17,21 @@ const dist = 'app/assets';
 mix.setPublicPath(`${dist}`);
 mix.setResourceRoot('./');
 
-// JavaScript
-mix.js(`${src}/scripts/main.js`, `${dist}/scripts`);
-mix.autoload({
-  jquery: ['$', 'window.jQuery', 'jQuery']
-});
-
-// PostCSS
-mix.sass(`${src}/styles/main.scss`, `${dist}/styles`);
+// Options
 mix.options({
-  processCssUrls: false,
   postCss: [
     require('postcss-import'),
     require('postcss-css-variables'),
     require('postcss-custom-media')
-  ]
+  ],
+  processCssUrls: false
 });
+
+// JavaScript
+mix.js(`${src}/scripts/main.js`, `${dist}/scripts`);
+
+// PostCSS
+mix.sass(`${src}/styles/main.scss`, `${dist}/styles`);
 
 // Images
 mix.copyDirectory(`${src}/images`, `${dist}/images`);

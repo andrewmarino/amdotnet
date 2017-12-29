@@ -1,5 +1,5 @@
 {
-  "name": "www",
+  "name": "amdotnet",
   "version": "1.0.0",
   "description": "",
   "repository": {
@@ -13,16 +13,14 @@
     "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
-    "fontfaceobserver": "^2.0.13",
-    "jquery": "^3.2.1",
     "lazysizes": "^4.0.1",
     "picturefill": "^3.0.2",
-    "tachyons": "^4.8.1"
+    "tachyons": "^4.9.0"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
-    "laravel-mix": "^1.6.1",
+    "laravel-mix": "^1.7.2",
     "postcss-css-variables": "^0.8.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-import": "^10.0.0"
