@@ -2,18 +2,13 @@ html {
   font-size: 100%;
 
   @media (--breakpoint-large) {
-    font-size: 125%;
+    font-size: 112.5%;
   }
 }
-
 
 body {
   background-color: var(--nearest-white);
   color: var(--eigengrau);
-}
-
-.fonts-loaded body {
-  font-family: 'Barlow', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, .subtitle {
@@ -21,16 +16,7 @@ h1, h2, h3, h4, h5, h6, .subtitle {
 }
 
 a {
-  position: relative;
-  text-decoration: none;
   color: var(--dark-green);
-}
-
-a:hover,
-a:focus {
-  position: relative;
-  outline: none;
-  text-decoration: underline;
 }
 
 a[href^="http"]:not([href*="local.am.dev"])::after,
@@ -63,19 +49,18 @@ picture {
   }
 }
 
-p a {
-  text-decoration: underline;
+footer {
+  border-top: 1px solid var(--eigengrau);
 }
 
-p a:hover,
-p a:focus {
-  background-color: rgba(19,119,82,.25);
-  color: var(--eigengrau);
+nav a {
+  position: relative;
+  outline: none;
+  text-decoration: none;
 }
 
 nav a:hover,
 nav a:focus {
-  text-decoration: none;
   color: var(--eigengrau);
 
   &:before {
@@ -87,6 +72,7 @@ nav a:focus {
     width: calc(100% + 1em);
     height: calc(100% + 1em);
     background-color: rgba(19,119,82,.25);
+    z-index: -1;
   }
 }
 
@@ -103,6 +89,36 @@ nav a:focus {
   color: var(--near-white);
 }
 
+// Theme Switching
+.inverted {
+  background-color: var(--eigengrau);
+  filter: invert(100%);
+}
+
+.inverted img:not([src*=".svg"]) {
+  filter: invert(100%);
+}
+
+.themer {
+  margin-left: auto;
+  color: var(--dark-green);
+  cursor: pointer;
+}
+
+.themer [type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.themer [type="checkbox"] + span::before {
+  content: 'off';
+}
+
+.themer [type="checkbox"]:checked + span::before {
+  content: 'on';
+}
+
+// Lazyloading
 .lazy,
 .lazyloading {
   opacity: 0;

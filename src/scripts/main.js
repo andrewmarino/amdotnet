@@ -14,4 +14,4 @@ const routes = new Router({
   common
 });
 
-jQuery(document).ready(() => routes.loadEvents());
+document.addEventListener('DOMContentLoaded', routes.loadEvents());

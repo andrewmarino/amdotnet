@@ -13,6 +13,7 @@
     "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
+    "js-cookie": "^2.2.0",
     "lazysizes": "^4.0.1",
     "picturefill": "^3.0.2",
     "tachyons": "^4.9.0"

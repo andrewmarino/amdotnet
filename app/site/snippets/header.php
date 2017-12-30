@@ -1,3 +1,11 @@
+<?php
+
+if (isset($_COOKIE['theme-inverted'])) :
+  $night_mode = $_COOKIE['theme-inverted'] === 'true' ? 'inverted' : '';
+endif;
+
+?>
+
 <!doctype html>
 <html lang="en-us">
   <head>
@@ -9,7 +17,7 @@
     <link rel="stylesheet" href="<?= mix('/styles/main.css'); ?>">
     <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
   </head>
-  <body class="<?php echo $page->template() ?> body sans-serif ph5-l ph4-m pa3">
+  <body class="body sans-serif ph5-l ph4-m pa3 <?= $night_mode ?? ''; ?>">
     <header class="mw8-ns pt3-ns">
       <?php snippet('menu'); ?>
     </header>
