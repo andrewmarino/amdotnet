@@ -15,11 +15,12 @@
   "dependencies": {
     "js-cookie": "^2.2.0",
     "lazysizes": "^4.0.1",
+    "macy": "^2.3.0",
     "picturefill": "^3.0.2",
-    "tachyons": "^4.9.0"
+    "tachyons": "^4.9.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.23.5",
     "browser-sync-webpack-plugin": "^1.2.0",
     "laravel-mix": "^1.7.2",
     "postcss-css-variables": "^0.8.0",
