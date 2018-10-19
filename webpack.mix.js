@@ -1,4 +1,6 @@
 let mix = require('laravel-mix');
+let glob = require('glob-all');
+let PurgecssPlugin = require('purgecss-webpack-plugin');
 
 /*
  |--------------------------------------------------------------------------
@@ -28,7 +30,14 @@ mix.options({
 });
 
 // JavaScript
-mix.js(`${src}/scripts/main.js`, `${dist}/scripts`);
+mix
+  .js(
+    [`${src}/scripts/lib/modaal.js`, `${src}/scripts/main.js`],
+    `${dist}/scripts/main.js`
+  )
+  .autoload({
+    jquery: ['$', 'window.jQuery', 'jQuery']
+  });
 
 // PostCSS
 mix.sass(`${src}/styles/main.scss`, `${dist}/styles`);
@@ -38,17 +47,39 @@ mix.copyDirectory(`${src}/images`, `${dist}/images`);
 
 // Browsersync
 mix.browserSync({
-  proxy: 'local.am.dev',
+  proxy: 'andrewmarino.test',
   notify: false,
   files: [`${dist}/styles/**/*.css`, `${dist}/styles/**/*.js`, '*.{php|html}']
 });
 
-// Source maps when not in production.
-if (!mix.inProduction()) {
-  mix.sourceMaps();
+// PurgeCSS extractor for allowing special characters in class names.
+// https://github.com/FullHuman/purgecss#extractor
+class LaravelMixExtractor {
+  static extract(content) {
+    return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
+  }
 }
 
-// Hash and version files in production.
 if (mix.inProduction()) {
+  // Hash and version files.
   mix.version();
+
+  // Purge unused CSS.
+  mix.webpackConfig({
+    plugins: [
+      new PurgecssPlugin({
+        paths: () =>
+          glob.sync([
+            path.join(__dirname, 'app/site/templates/**/*.blade.php'),
+            path.join(__dirname, 'src/scripts/**/*.js')
+          ]),
+        extractors: [
+          {
+            extractor: LaravelMixExtractor,
+            extensions: ['html', 'js', 'php']
+          }
+        ]
+      })
+    ]
+  });
 }
