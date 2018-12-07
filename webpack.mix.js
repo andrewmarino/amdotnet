@@ -1,71 +1,69 @@
 let mix = require('laravel-mix');
+let CopyWebpackPlugin = require('copy-webpack-plugin');
+let { default: ImageminPlugin } = require('imagemin-webpack-plugin');
+let imageminMozjpeg = require('imagemin-mozjpeg');
 let glob = require('glob-all');
 let PurgecssPlugin = require('purgecss-webpack-plugin');
+let LaravelMixExtractor = require('./src/scripts/util/LaravelMixExtractor');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
+/**
+ * Asset directory paths.
  */
-
 const src = 'src';
 const dist = 'app/assets';
 
-mix.setPublicPath(`${dist}`);
-mix.setResourceRoot('./');
-
-// Options
-mix.options({
-  postCss: [
-    require('postcss-import'),
-    require('postcss-css-variables'),
-    require('postcss-custom-media')
-  ],
-  processCssUrls: false
-});
-
-// JavaScript
+/**
+ * Options, custom image optimization, and Laravel Mix config.
+ */
 mix
-  .js(
-    [`${src}/scripts/lib/modaal.js`, `${src}/scripts/main.js`],
-    `${dist}/scripts/main.js`
-  )
-  .autoload({
-    jquery: ['$', 'window.jQuery', 'jQuery']
+  .options({
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 versions']
+      }
+    },
+    processCssUrls: false,
+    postCss: [
+      require('postcss-import'),
+      require('postcss-css-variables'),
+      require('postcss-custom-media')
+    ]
+  })
+  .setPublicPath(`${dist}`)
+  .webpackConfig({
+    plugins: [
+      new CopyWebpackPlugin([
+        {
+          from: `${src}/images`,
+          to: `images`
+        }
+      ]),
+      new ImageminPlugin({
+        optipng: { optimizationLevel: 7 },
+        gifsicle: { optimizationLevel: 3 },
+        pngquant: { quality: '65-90', speed: 4 },
+        svgo: { removeUnknownsAndDefaults: false, cleanupIDs: true },
+        plugins: [imageminMozjpeg({ quality: 80 })]
+      })
+    ]
   });
 
-// PostCSS
+/**
+ * Web fonts.
+ */
+mix.copy(`${src}/fonts`, `${dist}/fonts`);
+
+/**
+ * Main assets (JS & CSS).
+ */
+mix.js(`${src}/scripts/main.js`, `${dist}/scripts`);
 mix.sass(`${src}/styles/main.scss`, `${dist}/styles`);
 
-// Images
-mix.copyDirectory(`${src}/images`, `${dist}/images`);
-
-// Browsersync
-mix.browserSync({
-  proxy: 'andrewmarino.test',
-  notify: false,
-  files: [`${dist}/styles/**/*.css`, `${dist}/styles/**/*.js`, '*.{php|html}']
-});
-
-// PurgeCSS extractor for allowing special characters in class names.
-// https://github.com/FullHuman/purgecss#extractor
-class LaravelMixExtractor {
-  static extract(content) {
-    return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
-  }
-}
-
+/**
+ * Production build.
+ */
 if (mix.inProduction()) {
-  // Hash and version files.
-  mix.version();
-
-  // Purge unused CSS.
-  mix.webpackConfig({
+  mix.version().webpackConfig({
     plugins: [
       new PurgecssPlugin({
         paths: () =>
@@ -75,10 +73,11 @@ if (mix.inProduction()) {
           ]),
         extractors: [
           {
-            extractor: LaravelMixExtractor,
-            extensions: ['html', 'js', 'php']
+            extensions: ['html', 'js', 'php'],
+            extractor: LaravelMixExtractor
           }
-        ]
+        ],
+        whitelistPatterns: [/^tobi/]
       })
     ]
   });
