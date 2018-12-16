@@ -57,7 +57,9 @@ mix.copy(`${src}/fonts`, `${dist}/fonts`);
  * Main assets (JS & CSS).
  */
 mix.js(`${src}/scripts/main.js`, `${dist}/scripts`);
-mix.sass(`${src}/styles/main.scss`, `${dist}/styles`);
+mix.sass(`${src}/styles/main.scss`, `${dist}/styles`, {
+  implementation: require('node-sass')
+});
 
 /**
  * Production build.
