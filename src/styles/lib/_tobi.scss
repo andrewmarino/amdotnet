@@ -1,0 +1,50 @@
+.tobi {
+  background-color: var(--eigengrau);
+}
+
+.tobi button {
+  &.tobi__prev,
+  &.tobi__next,
+  &.tobi__close {
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &.tobi__close {
+    right: .5rem;
+    top: .5rem;
+  }
+}
+
+.tobi__counter {
+  @extend .serrfs;
+  font-size: 1rem;
+  height: auto;
+  top: 1rem;
+  left: 1rem;
+}
+
+.tobi__slider__slide__content > figure {
+  max-width: 100%;
+}
+
+.tobi__slider__slide__content > figure > img {
+  max-height: 70vh;
+  max-width: 70vw;
+
+  @media (--breakpoint-not-small) {
+    max-height: 80vh;
+    max-width: 80vw;
+  }
+}
+
+.tobi__slider__slide__content > figure > figcaption {
+  position: relative;
+  background-color: transparent;
+  color: white;
+  padding: 0;
+  margin-top: .5rem;
+  text-align: center;
+}

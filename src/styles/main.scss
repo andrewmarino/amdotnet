@@ -1,6 +1,12 @@
-// Import npm dependencies
-@import 'lib/tachyons';
+@import '~tachyons/src/tachyons';
 
 @import 'base/_var';
 @import 'base/_global';
+@import 'base/_type';
 @import 'base/_print';
+
+@import 'patterns/_lazy';
+@import 'patterns/_ratio-container';
+
+@import '~rqrauhvmra__tobi/scss/tobi';
+@import 'lib/_tobi';

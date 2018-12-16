@@ -1,0 +1,23 @@
+.lazy,
+.lazyloading {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.no-js .lazy,
+.lazyloaded {
+  opacity: 1;
+}
+
+.loading::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32px;
+  width: 32px;
+  margin: auto;
+  content: url('../images/loading.svg');
+  z-index: 0;
+}

@@ -1,17 +1,14 @@
 // import external dependencies
-import picturefill from 'picturefill';
-import lazysizes from 'lazysizes';
+import 'lazysizes';
 
 // import local dependencies
 import Router from './util/Router';
-import common from './routes/common';
+import Routes from './routes/index';
 
 /**
  * Populate Router instance with DOM routes
- * @type {Router} routes - An instance of our router
+ * @type {Router}
  */
-const routes = new Router({
-  common
-});
+const routes = new Router(Routes);
 
 document.addEventListener('DOMContentLoaded', routes.loadEvents());
