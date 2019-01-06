@@ -7,7 +7,6 @@ export default {
       'js'
     );
 
-
     if (!document.cookie.split(';').filter((item) => item.includes('fonts-loaded=true')).length) {
       let observer = new FontFaceObserver('source_serif_prosemibold');
 

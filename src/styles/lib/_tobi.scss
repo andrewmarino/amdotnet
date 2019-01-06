@@ -19,8 +19,8 @@
 }
 
 .tobi__counter {
-  @extend .serrfs;
-  font-size: 1rem;
+  font-size: 1.125rem;
+  font-feature-settings: 'smcp';
   height: auto;
   top: 1rem;
   left: 1rem;
@@ -33,10 +33,11 @@
 .tobi__slider__slide__content > figure > img {
   max-height: 70vh;
   max-width: 70vw;
+  margin-bottom: 1rem;
 
   @media (--breakpoint-not-small) {
     max-height: 80vh;
-    max-width: 80vw;
+    max-width: 600px;
   }
 }
 

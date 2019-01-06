@@ -36,9 +36,14 @@ a[href^='http']:not([href*='andrewmarino.net'])::after {
 }
 
 figure {
-  max-width: 475px;
   width: 100%;
-  margin: 0;
+  margin: 0 0 1rem 0;
+  line-height: 0;
+
+  &.fig {
+    max-width: 475px;
+    margin: 0;
+  }
 
   @media (--breakpoint-large) {
     &.float {
@@ -96,6 +101,15 @@ a.lightbox:hover {
 
 footer a {
   font-feature-settings: 'smcp', 'zero';
+}
+
+.mxa {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.measure-wide {
+  max-width: 578px;
 }
 
 .sr-only {
