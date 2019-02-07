@@ -1,37 +1,52 @@
-## Node.js
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-pids
-logs
-# results
-npm-debug.log
-node_modules
+# System files
+# ------------
 
-## OS X
-.DS_Store
-.AppleDouble
-.LSOverride
 Icon
-._*
-.Spotlight-V100
-.Trashes
+.DS_Store
+.vscode
 
-## Others
-temp
+# Temporary files
+# ---------------
 
-## Kirby
-app/.htaccess
-app/assets
-!app/content/.gitkeep
-app/content/*
-app/site/accounts/*.php
-app/site/cache/*
-app/site/config/*.php
-app/thumbs/*
-!app/thumbs/.gitignore
+/media/*
+!/media/index.html
+
+# -------------SECURITY-------------
+# NEVER publish these files via Git!
+# -------------SECURITY-------------
+
+# Cache Files
+# ---------------
+
+/site/cache/*
+!/site/cache/index.html
+
+# Accounts
+# ---------------
+
+/site/accounts/*
+!/site/accounts/index.html
+
+# Sessions
+# ---------------
+
+/site/sessions/*
+!/site/sessions/index.html
+
+# Config & license
+# ---------------
+
+/site/config/*
+
+# Content
+# ---------------
+
+/content/*
+
+# Kirby core, dev and production files
+# ---------------
+
+/assets/dist
+/kirby
+/node_modules
+/vendor
