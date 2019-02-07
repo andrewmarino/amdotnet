@@ -4,13 +4,13 @@ let { default: ImageminPlugin } = require('imagemin-webpack-plugin');
 let imageminMozjpeg = require('imagemin-mozjpeg');
 let glob = require('glob-all');
 let PurgecssPlugin = require('purgecss-webpack-plugin');
-let LaravelMixExtractor = require('./src/scripts/util/LaravelMixExtractor');
+let LaravelMixExtractor = require('./assets/src/scripts/util/LaravelMixExtractor');
 
 /**
  * Asset directory paths.
  */
-const src = 'src';
-const dist = 'app/assets';
+const src = 'assets/src';
+const dist = 'assets/dist';
 
 /**
  * Options, custom image optimization, and Laravel Mix config.
@@ -70,8 +70,8 @@ if (mix.inProduction()) {
       new PurgecssPlugin({
         paths: () =>
           glob.sync([
-            path.join(__dirname, 'app/site/templates/**/*.blade.php'),
-            path.join(__dirname, 'src/scripts/**/*.js')
+            path.join(__dirname, 'site/templates/**/*.blade.php'),
+            path.join(__dirname, 'assets/src/scripts/**/*.js')
           ]),
         extractors: [
           {

@@ -1,0 +1,28 @@
+title: Project
+pages: false
+columns:
+  - width: 1/3
+    fields:
+      title:
+        label: Title
+        type:  text
+      text:
+        label: Text
+        type:  textarea
+      cover:
+        label: Cover Image
+        type: files
+        multiple: false
+      type:
+        label: Project Type
+        type: tags
+  - width: 2/3
+    sections:
+      images:
+        type: files
+        template: image
+        layout: cards
+        text: "{{ file.dimensions }}"
+        image:
+          cover: true
+          ratio: 5/4
