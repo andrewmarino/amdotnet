@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "313c3a0904f65a365744be0c4a71801a",
+    "content-hash": "aa81625c80038a402c4f76d65e33cba2",
     "packages": [
         {
             "name": "beebmx/kirby-blade",
@@ -280,16 +280,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "72f01eac0a7db59360894e0cfb44680276260174"
+                "reference": "d62cc7536a709f8346eb2b1a066db835e0372128"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/72f01eac0a7db59360894e0cfb44680276260174",
-                "reference": "72f01eac0a7db59360894e0cfb44680276260174",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/d62cc7536a709f8346eb2b1a066db835e0372128",
+                "reference": "d62cc7536a709f8346eb2b1a066db835e0372128",
                 "shasum": ""
             },
             "require": {
@@ -337,19 +337,19 @@
                 "core",
                 "kirby"
             ],
-            "time": "2019-01-15T08:15:26+00:00"
+            "time": "2019-02-05T10:23:01+00:00"
         },
         {
             "name": "getkirby/composer-installer",
             "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/k-next/composer-installer.git",
+                "url": "https://github.com/getkirby/composer-installer.git",
                 "reference": "dc0e38c4f0fc04875c1a523d82364a44f436cbf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/k-next/composer-installer/zipball/dc0e38c4f0fc04875c1a523d82364a44f436cbf4",
+                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/dc0e38c4f0fc04875c1a523d82364a44f436cbf4",
                 "reference": "dc0e38c4f0fc04875c1a523d82364a44f436cbf4",
                 "shasum": ""
             },
