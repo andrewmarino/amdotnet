@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa81625c80038a402c4f76d65e33cba2",
+    "content-hash": "c604eb9de31777de0a63885cd0b60ffc",
     "packages": [
         {
             "name": "beebmx/kirby-blade",
-            "version": "1.0.0",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beebmx/kirby-blade.git",
-                "reference": "080e1bdcb2a9679285a04a0dde43f4940f147391"
+                "reference": "f5d70fda320b2f76d1b1b97ab6e1cbd14ceadb22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beebmx/kirby-blade/zipball/080e1bdcb2a9679285a04a0dde43f4940f147391",
-                "reference": "080e1bdcb2a9679285a04a0dde43f4940f147391",
+                "url": "https://api.github.com/repos/beebmx/kirby-blade/zipball/f5d70fda320b2f76d1b1b97ab6e1cbd14ceadb22",
+                "reference": "f5d70fda320b2f76d1b1b97ab6e1cbd14ceadb22",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0",
+                "getkirby/composer-installer": "^1.1",
                 "php": "^7.1.3"
             },
             "require-dev": {
@@ -56,7 +56,7 @@
                 "template",
                 "view"
             ],
-            "time": "2019-01-23T17:04:01+00:00"
+            "time": "2019-02-13T20:16:53+00:00"
         },
         {
             "name": "claviska/simpleimage",
@@ -96,126 +96,6 @@
             ],
             "description": "A PHP class that makes working with images as simple as possible.",
             "time": "2017-09-12T09:03:56+00:00"
-        },
-        {
-            "name": "composer/installers",
-            "version": "v1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
-            },
-            "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "^4.8.36"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Composer\\Installers\\Plugin",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Installers\\": "src/Composer/Installers"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
-                }
-            ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "https://composer.github.io/installers/",
-            "keywords": [
-                "Craft",
-                "Dolibarr",
-                "Eliasis",
-                "Hurad",
-                "ImageCMS",
-                "Kanboard",
-                "Lan Management System",
-                "MODX Evo",
-                "Mautic",
-                "Maya",
-                "OXID",
-                "Plentymarkets",
-                "Porto",
-                "RadPHP",
-                "SMF",
-                "Thelia",
-                "WolfCMS",
-                "agl",
-                "aimeos",
-                "annotatecms",
-                "attogram",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "cockpit",
-                "codeigniter",
-                "concrete5",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "eZ Platform",
-                "elgg",
-                "expressionengine",
-                "fuelphp",
-                "grav",
-                "installer",
-                "itop",
-                "joomla",
-                "kohana",
-                "laravel",
-                "lavalite",
-                "lithium",
-                "magento",
-                "majima",
-                "mako",
-                "mediawiki",
-                "modulework",
-                "modx",
-                "moodle",
-                "osclass",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "puppet",
-                "pxcms",
-                "reindex",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "sydes",
-                "symfony",
-                "typo3",
-                "wordpress",
-                "yawik",
-                "zend",
-                "zikula"
-            ],
-            "time": "2018-08-27T06:10:37+00:00"
         },
         {
             "name": "filp/whoops",
@@ -280,16 +160,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.0.1",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "d62cc7536a709f8346eb2b1a066db835e0372128"
+                "reference": "74b593ff86f9a220343d08e3c631b128d09e76d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/d62cc7536a709f8346eb2b1a066db835e0372128",
-                "reference": "d62cc7536a709f8346eb2b1a066db835e0372128",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/74b593ff86f9a220343d08e3c631b128d09e76d6",
+                "reference": "74b593ff86f9a220343d08e3c631b128d09e76d6",
                 "shasum": ""
             },
             "require": {
@@ -297,7 +177,7 @@
                 "ext-ctype": "*",
                 "ext-mbstring": "*",
                 "filp/whoops": "2.3.1",
-                "getkirby/composer-installer": "*",
+                "getkirby/composer-installer": "^1.0",
                 "michelf/php-smartypants": "1.8.1",
                 "mustangostang/spyc": "0.6.2",
                 "php": ">=7.1.0",
@@ -337,28 +217,28 @@
                 "core",
                 "kirby"
             ],
-            "time": "2019-02-05T10:23:01+00:00"
+            "time": "2019-03-19T08:43:05+00:00"
         },
         {
             "name": "getkirby/composer-installer",
-            "version": "1.0.1",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/composer-installer.git",
-                "reference": "dc0e38c4f0fc04875c1a523d82364a44f436cbf4"
+                "reference": "2d6b8f5601a31caeeea45623e1643fbb437eb94e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/dc0e38c4f0fc04875c1a523d82364a44f436cbf4",
-                "reference": "dc0e38c4f0fc04875c1a523d82364a44f436cbf4",
+                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/2d6b8f5601a31caeeea45623e1643fbb437eb94e",
+                "reference": "2d6b8f5601a31caeeea45623e1643fbb437eb94e",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0"
             },
             "require-dev": {
-                "composer/composer": "^1.3",
-                "phpunit/phpunit": "^6.0"
+                "composer/composer": "^1.8",
+                "phpunit/phpunit": "^7.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -366,16 +246,54 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Kirby\\ComposerInstaller\\": "src/"
+                    "Kirby\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Kirby's custom Composer installer for the Kirby CMS",
+            "description": "Kirby's custom Composer installer for the Kirby CMS and for Kirby plugins",
             "homepage": "https://getkirby.com",
-            "time": "2018-12-19T10:01:45+00:00"
+            "time": "2019-02-11T20:27:36+00:00"
+        },
+        {
+            "name": "k-community/markdown-field",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sylvainjule/kirby-markdown-field.git",
+                "reference": "268d9eb1e92929e2f793f6d9612e5205e8051c41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sylvainjule/kirby-markdown-field/zipball/268d9eb1e92929e2f793f6d9612e5205e8051c41",
+                "reference": "268d9eb1e92929e2f793f6d9612e5205e8051c41",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.1"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "installer-name": "markdown-field"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sylvain Julé",
+                    "email": "contact@sylvain-jule.fr"
+                },
+                {
+                    "name": "Fabian Michael",
+                    "email": "hallo@fabianmichael.de"
+                }
+            ],
+            "description": "Enhanced markdown editor for Kirby 3",
+            "time": "2019-03-18T10:54:56+00:00"
         },
         {
             "name": "league/color-extractor",
