@@ -7,7 +7,7 @@
     <figure class="ratio-container fig ma0 pa0 loading" data-aspect-ratio="{{ round($photo->dimensions()->ratio(), 2) }}">
       <img
         class="lazy lazyload"
-        data-srcset="{{ $photo->resize(475)->url() }} 1x, {{ $photo->resize(950)->url() }} 2x"
+        data-srcset="{{ $photo->srcset([475 => '1x', 950 => '2x']) }}"
         alt="{{ $photo->alt() }}"
       />
     </figure>

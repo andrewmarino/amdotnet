@@ -16,7 +16,7 @@
         <figure class="ratio-container fig ma0 pa0 loading" data-aspect-ratio="{{ round($photo->dimensions()->ratio(), 2) }}">
           <img
             class="lazy lazyload"
-            data-srcset="{{ $photo->resize(275)->url() }} 1x, {{ $photo->resize(500)->url() }} 2x"
+            data-srcset="{{ $photo->srcset([275 => '1x', 500 => '2x']) }}"
             alt=""
             data-expand="-10"
           />
