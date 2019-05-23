@@ -13,7 +13,7 @@
 
 .ratio-container::after {
   display: block;
-  background-color: var(--light-gray);
+  background-color: var(--dark-gray);
   height: 0;
   width: 100%;
   content: '';
@@ -37,4 +37,8 @@
 
 [data-aspect-ratio='1.33']::after {
   padding-top: 75%;
+}
+
+[data-aspect-ratio='1.74']::after {
+  padding-top: calc(1450 / 2528 * 100%);
 }

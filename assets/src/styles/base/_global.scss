@@ -1,9 +1,6 @@
 html {
-  font-size: 87.5%;
-
-  @media (--breakpoint-not-small) {
-    font-size: 100%;
-  }
+  font-size: calc(16px + 0.125vw);
+  line-height: 1.5;
 }
 
 body {
@@ -11,12 +8,19 @@ body {
   flex-direction: column;
   height: 100vh;
   max-width: 1400px;
-  background-color: var(--nearest-white);
-  color: var(--eigengrau);
+  background-color: var(--eigengrau);
+  color: var(--white);
 
   > header,
   > footer {
     flex-shrink: 0;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--white);
+    color: var(--eigengrau);
   }
 }
 
@@ -25,9 +29,9 @@ main {
 }
 
 a {
-  color: var(--dark-green);
+  color: var(--white);
   text-decoration: none;
-  box-shadow: inset 0 -1.5px 0 0 var(--dark-green);
+  box-shadow: inset 0 -1.5px 0 0 var(--white);
 }
 
 a[href^='http']:not([href*='andrewmarino.net'])::after {
@@ -35,20 +39,40 @@ a[href^='http']:not([href*='andrewmarino.net'])::after {
   content: '(external link)';
 }
 
+picture {
+  display: block;
+}
+
 figure {
+  line-height: 0;
+}
+
+figure,
+picture {
   width: 100%;
   margin: 0 0 1rem 0;
-  line-height: 0;
 
   &.fig {
     max-width: 475px;
     margin: 0;
   }
 
+  .content & {
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
   @media (--breakpoint-large) {
     &.float {
       float: right;
       margin: 0 -150px 1rem 1rem;
+    }
+
+    .content & {
+      width: calc(100% + 4rem);
+      margin-left: -2rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -59,48 +83,24 @@ figcaption {
 
 img {
   max-width: 100%;
+  height: auto;
 
-  // Forgot required alt attribute.
+  // Forgot required alt attribute, ya dingus.
   &:not([alt]) {
     border: 5px solid #c00;
   }
 }
 
-picture {
-  max-width: 475px;
-
-  > img {
-    display: block;
-    width: 100%;
-    object-fit: cover;
-  }
-}
-
-footer {
-  border-top: 1px solid var(--eigengrau);
-}
-
 nav a {
   box-shadow: inset 0 -2px 0 0 transparent;
-  transition: box-shadow .3s ease-in-out;
 
   &.active {
-    box-shadow: inset 0 -2px 0 0 var(--dark-green);
-  }
-
-  &:hover,
-  &:focus {
-    box-shadow: inset 0 -1.75rem 0 0 transparentize(#137752, 0.85);
-    color: var(--eigengrau);
+    box-shadow: inset 0 -2px 0 0 var(--white);
   }
 }
 
 a.lightbox:hover {
   cursor: zoom-in;
-}
-
-footer a {
-  font-feature-settings: 'smcp', 'zero';
 }
 
 .mxa {
@@ -109,7 +109,7 @@ footer a {
 }
 
 .measure-wide {
-  max-width: 578px;
+  max-width: 640px;
 }
 
 .sr-only {
@@ -135,7 +135,12 @@ footer a {
   top: 0;
 }
 
+:focus:not([tabindex='-1']) {
+  outline: 4px solid var(--light-blue);
+  outline-offset: 2px;
+}
+
 ::selection {
-  background-color: var(--dark-green);
-  color: var(--near-white);
+  background-color: var(--green);
+  color: var(--white);
 }

@@ -4,6 +4,7 @@
 Icon
 .DS_Store
 .vscode
+.idea
 
 # Temporary files
 # ---------------

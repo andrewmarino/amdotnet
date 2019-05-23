@@ -12,6 +12,14 @@
     }
   }
 
+  &.tobi__prev {
+    left: 8px;
+  }
+
+  &.tobi__next {
+    right: 8px;
+  }
+
   &.tobi__close {
     right: .5rem;
     top: .5rem;

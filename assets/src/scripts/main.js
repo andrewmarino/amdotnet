@@ -1,5 +1,6 @@
 // import external dependencies
 import 'lazysizes';
+import 'picturefill';
 
 // import local dependencies
 import Router from './util/Router';

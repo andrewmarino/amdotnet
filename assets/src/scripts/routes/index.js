@@ -5,7 +5,7 @@ import project from './project';
 const Routes = {
   common,
   projects,
-  project
+  project,
 };
 
 export default Routes;

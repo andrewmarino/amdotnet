@@ -9,7 +9,7 @@ columns:
           caption:
             label: Caption
             type: textarea
-            size: medium
+            size: small
   - width: 1/2
     sections:
       meta:
@@ -17,4 +17,5 @@ columns:
         fields:
           alt:
             label: Alt Text
-            type: text
+            type: textarea
+            size: small

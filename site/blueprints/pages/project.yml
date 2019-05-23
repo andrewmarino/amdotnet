@@ -8,10 +8,11 @@ columns:
         type:  text
       text:
         label: Text
-        type:  textarea
+        type:  markdown
       cover:
         label: Cover Image
         type: files
+        template: image
         multiple: false
       type:
         label: Project Type
