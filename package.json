@@ -1,7 +1,6 @@
 {
   "name": "amdotnet",
   "version": "1.0.0",
-  "description": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andrewmarino/amdotnet.git"
@@ -14,23 +13,25 @@
   },
   "dependencies": {
     "fontfaceobserver": "^2.1.0",
-    "lazysizes": "^4.1.4",
-    "macy": "^2.3.1",
-    "rqrauhvmra__tobi": "^1.8.0",
+    "lazysizes": "^5.0.0",
+    "macy": "^2.5.0",
+    "picturefill": "^3.0.3",
+    "rqrauhvmra__tobi": "^1.8.1",
     "tachyons": "^4.11.1"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^4.3.1",
+    "copy-webpack-plugin": "^5.0.3",
     "glob-all": "^3.1.0",
     "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-webpack-plugin": "^2.3.0",
-    "laravel-mix": "^4.0.13",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "laravel-mix": "^4.0.15",
+    "laravel-mix-imagemin": "^1.0.0",
     "node-sass": "^4.11.0",
     "postcss-css-variables": "^0.11.0",
     "postcss-custom-media": "^7.0.0",
     "postcss-import": "^12.0.0",
     "purgecss-webpack-plugin": "^1.4.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.10"
   }
 }
