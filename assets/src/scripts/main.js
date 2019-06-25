@@ -5,6 +5,7 @@ import 'picturefill';
 // import local dependencies
 import Router from './util/Router';
 import Routes from './routes/index';
+import { ready } from './utils';
 
 /**
  * Populate Router instance with DOM routes
@@ -12,4 +13,7 @@ import Routes from './routes/index';
  */
 const routes = new Router(Routes);
 
-document.addEventListener('DOMContentLoaded', routes.loadEvents());
+/**
+ * Load events
+ */
+ready(() => routes.loadEvents());
