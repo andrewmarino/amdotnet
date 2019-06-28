@@ -8,18 +8,21 @@
   </header>
   <section class="w-two-thirds-l ml4-l mt3 mt0-l macy">
     @foreach ($photos as $photo)
-    <a class="db lightbox" href="{{ $photo->resize(1200, 1200)->url() }}">
-      <span class="sr-only">View Lightbox Image: {{ $loop->iteration }} of {{ $loop->count }}</span>
-      <figure class="ratio-container fig ma0 pa0 loading" data-aspect-ratio="{{ round($photo->dimensions()->ratio(), 2) }}">
-        <img
-          class="lazy lazyload"
-          data-srcset="{{ $photo->srcset([275 => '1x', 500 => '2x']) }}"
-          alt="{{ $photo->alt() }}"
-          data-caption="{{ $photo->caption() }}"
-          data-expand="-10"
-        />
-      </figure>
-    </a>
+      @php $aspect_ratio = round($photo->dimensions()->ratio(), 2) @endphp
+      <a class="db lightbox" href="{{ $photo->resize(1200, 1200)->url() }}">
+        <span class="sr-only">View Lightbox Image: {{ $loop->iteration }} of {{ $loop->count }}</span>
+        <div class="ratio-container fig ma0 pa0" data-aspect-ratio="{{ $aspect_ratio }}">
+          <img
+            class="lazy lazyload"
+            data-sizes="auto"
+            data-aspectratio="{{ $aspect_ratio }}"
+            data-lowsrc="{{ $photo->thumb('lowsrc')->url() }}"
+            data-srcset="{{ $photo->srcset([275 => '1x', 500 => '2x']) }}"
+            alt="{{ $photo->alt() }}"
+            data-caption="{{ $photo->caption() }}"
+          />
+        </div>
+      </a>
     @endforeach
   </section>
 </div>

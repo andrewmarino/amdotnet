@@ -1,5 +1,8 @@
 // import external dependencies
 import 'lazysizes';
+import 'lazysizes/plugins/blur-up/ls.blur-up';
+import 'lazysizes/plugins/object-fit/ls.object-fit';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import 'picturefill';
 
 // import local dependencies

@@ -9,19 +9,22 @@
   <section class="w-two-thirds-l ml4-l mt3 mt0-l macy">
     @foreach ($projects as $project)
       @if ($photo = $project->cover()->toFile())
-      <a class="overlay" href="{{ $project->url() }}">
-        <div class="overlay-content tc pa3">
-          <h2 class="f3 mt0 white">{{ $project->title()->html() }}</h2>
-        </div>
-        <figure class="ratio-container fig ma0 pa0 loading" data-aspect-ratio="{{ round($photo->dimensions()->ratio(), 2) }}">
-          <img
-            class="lazy lazyload"
-            data-srcset="{{ $photo->srcset([275 => '1x', 500 => '2x']) }}"
-            alt=""
-            data-expand="-10"
-          />
-        </figure>
-      </a>
+        @php $aspect_ratio = round($photo->dimensions()->ratio(), 2) @endphp
+        <a class="overlay" href="{{ $project->url() }}">
+          <div class="overlay-content tc pa3">
+            <h2 class="f3 mt0 white">{{ $project->title()->html() }}</h2>
+          </div>
+          <div class="ratio-container fig ma0 pa0" data-aspect-ratio="{{ round($photo->dimensions()->ratio(), 2) }}">
+            <img
+              class="lazy lazyload"
+              data-sizes="auto"
+              data-aspectratio="{{ $aspect_ratio }}"
+              data-lowsrc="{{ $photo->thumb('lowsrc')->url() }}"
+              data-srcset="{{ $photo->srcset([275 => '1x', 500 => '2x']) }}"
+              alt=""
+            />
+          </div>
+        </a>
       @endif
     @endforeach
   </section>

@@ -52,11 +52,6 @@ picture {
   width: 100%;
   margin: 0 0 1rem 0;
 
-  &.fig {
-    max-width: 475px;
-    margin: 0;
-  }
-
   .content & {
     width: calc(100% + 2rem);
     margin-left: -1rem;
@@ -76,6 +71,21 @@ picture {
     }
   }
 }
+
+div,
+figure,
+picture {
+  &.fig {
+    max-width: 475px;
+    margin: 0;
+  }
+}
+
+// .fig {
+//   max-width: 475px;
+//   width: 100%;
+//   margin: 0;
+// }
 
 figcaption {
   font-size: .75rem;

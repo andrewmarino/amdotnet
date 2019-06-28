@@ -3,7 +3,7 @@ import Tobi from 'rqrauhvmra__tobi';
 import icons from '../icons/icons';
 
 export default {
-  init() {
+  finalize() {
     let macyInstance = Macy({
       breakAt: {
         768: {
@@ -33,5 +33,5 @@ export default {
       navText: [icons.tobi_prev, icons.tobi_next],
       zoom: false,
     });
-  },
+  }
 };

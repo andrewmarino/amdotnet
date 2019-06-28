@@ -20,9 +20,5 @@ export default {
       });
     }
   },
-  finalize() {
-    document.addEventListener('lazyloaded', e => {
-      e.target.parentNode.classList.remove('loading');
-    });
-  },
+  finalize() {},
 };

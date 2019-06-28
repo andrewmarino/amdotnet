@@ -1,8 +1,8 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
 require('laravel-mix-imagemin');
-let glob = require('glob-all');
-let PurgecssPlugin = require('purgecss-webpack-plugin');
-let LaravelMixExtractor = require('./assets/src/scripts/util/LaravelMixExtractor');
+const glob = require('fast-glob');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const LaravelMixExtractor = require('./assets/src/scripts/util/LaravelMixExtractor');
 
 /**
  * Asset directory paths.
@@ -81,7 +81,7 @@ if (mix.inProduction()) {
             extractor: LaravelMixExtractor,
           },
         ],
-        whitelistPatterns: [/^tobi/],
+        whitelistPatterns: [/^tobi/, /^ls-/],
       }),
     ],
   });

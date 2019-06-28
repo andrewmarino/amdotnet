@@ -1,23 +1,21 @@
-.lazy,
+.lazy.lazyload,
 .lazyloading {
+  color: transparent;
   opacity: 0;
   transition: opacity 300ms;
 }
 
-.no-js .lazy,
+.no-js .lazyload,
 .lazyloaded {
+  color: inherit;
   opacity: 1;
 }
 
-.loading::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 32px;
-  width: 32px;
-  margin: auto;
-  content: url('../images/loading.svg');
-  z-index: 0;
+.ls-blur-up-img {
+  opacity: 1;
+  transition: opacity 1200ms;
+}
+
+.ls-inview.ls-original-loaded {
+  opacity: 0;
 }
