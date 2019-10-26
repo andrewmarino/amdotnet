@@ -160,16 +160,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.2.0",
+            "version": "3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "80b69380e672565a849037232c9951d1e32774c8"
+                "reference": "b8846772d3cc2fabe4e84c5b7f128dcd0b6e4202"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/80b69380e672565a849037232c9951d1e32774c8",
-                "reference": "80b69380e672565a849037232c9951d1e32774c8",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/b8846772d3cc2fabe4e84c5b7f128dcd0b6e4202",
+                "reference": "b8846772d3cc2fabe4e84c5b7f128dcd0b6e4202",
                 "shasum": ""
             },
             "require": {
@@ -215,7 +215,7 @@
                 "core",
                 "kirby"
             ],
-            "time": "2019-06-25T07:44:02+00:00"
+            "time": "2019-09-24T08:46:37+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -257,16 +257,16 @@
         },
         {
             "name": "k-community/markdown-field",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sylvainjule/kirby-markdown-field.git",
-                "reference": "268d9eb1e92929e2f793f6d9612e5205e8051c41"
+                "reference": "bc59012d8720b58f8c730727ffc3452e753c72c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sylvainjule/kirby-markdown-field/zipball/268d9eb1e92929e2f793f6d9612e5205e8051c41",
-                "reference": "268d9eb1e92929e2f793f6d9612e5205e8051c41",
+                "url": "https://api.github.com/repos/sylvainjule/kirby-markdown-field/zipball/bc59012d8720b58f8c730727ffc3452e753c72c9",
+                "reference": "bc59012d8720b58f8c730727ffc3452e753c72c9",
                 "shasum": ""
             },
             "require": {
@@ -291,7 +291,7 @@
                 }
             ],
             "description": "Enhanced markdown editor for Kirby 3",
-            "time": "2019-03-18T10:54:56+00:00"
+            "time": "2019-06-21T06:23:51+00:00"
         },
         {
             "name": "league/color-extractor",
@@ -613,16 +613,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
+                "reference": "bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
+                "reference": "bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
                 "shasum": ""
             },
             "require": {
@@ -631,7 +631,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -656,20 +656,20 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2018-11-20T15:27:04+00:00"
+            "time": "2019-10-25T08:06:51+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.11.0",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609"
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fe5e94c604826c35a32fa832f35bd036b6799609",
-                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17",
                 "shasum": ""
             },
             "require": {
@@ -681,7 +681,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "1.12-dev"
                 }
             },
             "autoload": {
@@ -715,7 +715,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-02-06T07:57:58+00:00"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "true/punycode",
