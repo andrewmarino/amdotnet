@@ -3,7 +3,7 @@
   <nav class="flex flex-column flex-row-ns items-center-ns justify-between-ns fw6">
     <a class="f3 mb3 mb0-ns" href="{{ url() }}">{{ $site->title()->html() }}</a>
     <ul class="flex list pa0 ma0 f5 smcp ttl">
-      @foreach ($pages->visible() as $page)
+      @foreach ($pages->listed() as $page)
         <li class="mr3 mr0-ns ml3-ns">
           <a class="{{ $page->isOpen() ? 'active' : '' }}" href="{{ $page->url() }}">{{ $page->title()->html() }}</a>
         </li>
