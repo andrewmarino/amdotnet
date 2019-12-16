@@ -11,7 +11,7 @@ columns:
             type:  text
           text:
             label: Text
-            type:  markdown
+            type:  editor
   - width: 1/3
     sections:
       files:

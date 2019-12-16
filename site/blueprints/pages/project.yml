@@ -8,7 +8,7 @@ columns:
         type:  text
       text:
         label: Text
-        type:  markdown
+        type:  editor
       cover:
         label: Cover Image
         type: files

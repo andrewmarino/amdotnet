@@ -4,7 +4,7 @@
 <div class="flex flex-column flex-row-l justify-between-l f5">
   <header class="w-third-l lh-copy f5">
     <h1 class="mt0">Projects</h1>
-    @kirbytext($page->text())
+    @kirbytext($page->text()->blocks())
   </header>
   <section class="w-two-thirds-l ml4-l mt3 mt0-l macy">
     @foreach ($projects as $project)
