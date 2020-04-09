@@ -1,14 +1,14 @@
 <?php
 
-return function($site, $pages, $page) {
-  $data = [];
-  $data['projects'] = page('projects')
-    ->children()
-    ->listed();
+return function($site, $pages, $page, $kirby) {
+  $shared = $kirby->controller('site' , compact('site', 'pages', 'page', 'kirby'));
 
-  if ($type = param('type')) {
-    $data['projects'] = $data['projects']->filterBy('type', $type, ',');
-  }
+  $data = [
+    'projects' => page('projects')
+      ->children()
+      ->filterBy('type', '!=', 'web')
+      ->listed()
+  ];
 
-  return $data;
+  return a::merge($shared, $data);
 };

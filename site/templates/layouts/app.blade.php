@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en-us" class="no-js {{ isset($_COOKIE['fonts-loaded']) ? 'fonts-loaded' : '' }}">
+<html lang="en-us" class="no-js">
   @include('partials.head')
-  <body class="body sans-serif pt4 ph3 pt4-l ph4-l mxa {{ $page->template() }}">
+  <body class="md:px-4 py-10 {{ join(' ', $body_class) }}">
     @include('partials.header')
-    <main class="mv5" id="content">
+    <main class="container my-16" id="content">
       @yield('content')
     </main>
     @include('partials.footer')

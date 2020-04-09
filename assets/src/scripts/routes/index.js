@@ -1,10 +1,10 @@
 import common from './common';
-import projects from './projects';
+import macyLayout from './macyLayout';
 import project from './project';
 
 const Routes = {
   common,
-  projects,
+  macyLayout,
   project,
 };
 

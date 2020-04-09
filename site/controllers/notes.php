@@ -1,11 +1,13 @@
 <?php
 
-return function($site, $pages, $page) {
+return function($site, $pages, $page, $kirby) {
+  $shared = $kirby->controller('site' , compact('site', 'pages', 'page', 'kirby'));
+
   $data = [];
   $data['notes'] = page('notes')
     ->children()
-    ->visible()
+    ->listed()
     ->flip();
 
-  return $data;
+  return a::merge($shared, $data);
 };

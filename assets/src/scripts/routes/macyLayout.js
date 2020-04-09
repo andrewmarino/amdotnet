@@ -21,5 +21,5 @@ export default {
     macyInstance.runOnImageLoad(() => {
       macyInstance.recalculate(true);
     }, true);
-  },
+  }
 };
