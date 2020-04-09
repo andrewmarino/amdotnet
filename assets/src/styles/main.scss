@@ -1,9 +1,11 @@
-@import '~tachyons/src/tachyons';
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
 
 @import 'base/_var';
 @import 'base/_global';
+@import 'base/_a11y';
 @import 'base/_type';
-@import 'base/_print';
+@import 'base/_content';
 
 @import 'patterns/_lazy';
 @import 'patterns/_overlay';
@@ -11,3 +13,5 @@
 
 @import '~rqrauhvmra__tobi/scss/tobi';
 @import 'lib/_tobi';
+
+@import "~tailwindcss/utilities";

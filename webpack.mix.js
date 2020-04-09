@@ -1,8 +1,9 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss');
 require('laravel-mix-imagemin');
 const glob = require('fast-glob');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
-const LaravelMixExtractor = require('./assets/src/scripts/util/LaravelMixExtractor');
+const LaravelMixExtractor = require('./assets/src/build/LaravelMixExtractor');
 
 /**
  * Asset directory paths.
@@ -25,6 +26,7 @@ mix
       require('postcss-import'),
       require('postcss-css-variables'),
       require('postcss-custom-media'),
+      tailwindcss('./tailwind.config.js'),
     ],
   })
   .setPublicPath(`${dist}`);

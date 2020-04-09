@@ -16,11 +16,10 @@
     "lazysizes": "^5.1.2",
     "macy": "^2.5.0",
     "picturefill": "^3.0.3",
-    "rqrauhvmra__tobi": "^1.8.1",
-    "tachyons": "^4.11.1"
+    "rqrauhvmra__tobi": "^1.8.1"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^5.0.4",
+    "copy-webpack-plugin": "^5.1.1",
     "fast-glob": "^3.1.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
@@ -32,6 +31,7 @@
     "postcss-import": "^12.0.0",
     "purgecss-webpack-plugin": "^1.6.0",
     "sass-loader": "^8.0.0",
+    "tailwindcss": "^1.2.0",
     "vue-template-compiler": "^2.6.10"
   }
 }
