@@ -1,0 +1,30 @@
+a[href^='http']:not([href*='andrewmarino.net'])::after {
+  @apply sr-only;
+  content: '(external link)';
+}
+
+.skippy {
+  position: absolute !important;
+  top: 0.25rem;
+  left: 0.25rem;
+}
+
+:focus:not([tabindex='-1']) {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 3px;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--white);
+    color: var(--eigengrau);
+  }
+
+  :focus:not([tabindex='-1']) {
+    outline-color: var(--accent-light);
+  }
+
+  ::selection {
+    background-color: var(--accent-dark);
+  }
+}

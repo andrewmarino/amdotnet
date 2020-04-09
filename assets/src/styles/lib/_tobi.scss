@@ -27,7 +27,7 @@
 }
 
 .tobi__counter {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-feature-settings: 'smcp';
   height: auto;
   top: 1rem;
@@ -39,8 +39,8 @@
 }
 
 .tobi__slider__slide__content > figure > img {
-  max-height: 70vh;
-  max-width: 70vw;
+  max-height: 75vh;
+  max-width: 75vw;
   margin-bottom: 1rem;
 
   @media (--breakpoint-not-small) {
@@ -52,7 +52,7 @@
 .tobi__slider__slide__content > figure > figcaption {
   position: relative;
   background-color: transparent;
-  color: white;
+  color: var(--white);
   padding: 0;
   margin-top: .5rem;
   text-align: center;

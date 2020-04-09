@@ -1,13 +1,15 @@
 html {
-  font-size: calc(16px + 0.125vw);
+  font-size: calc(18px + 0.125vw);
   line-height: 1.5;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Chivo', sans-serif;
   background-color: var(--eigengrau);
   color: var(--white);
 
@@ -17,11 +19,12 @@ body {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--white);
-    color: var(--eigengrau);
-  }
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 main {
@@ -29,63 +32,18 @@ main {
 }
 
 a {
-  color: var(--white);
+  color: inherit;
   text-decoration: none;
-  box-shadow: inset 0 -1.5px 0 0 var(--white);
+  box-shadow: inset 0 -1.5px 0 0 currentColor;
 }
 
-a[href^='http']:not([href*='andrewmarino.net'])::after {
-  @extend .sr-only;
-  content: '(external link)';
-}
-
+figure,
 picture {
   display: block;
-}
-
-figure {
   line-height: 0;
-}
-
-figure,
-picture {
   width: 100%;
   margin: 0 0 1rem 0;
-
-  .content & {
-    width: calc(100% + 2rem);
-    margin-left: -1rem;
-    margin-right: -1rem;
-  }
-
-  @media (--breakpoint-large) {
-    &.float {
-      float: right;
-      margin: 0 -150px 1rem 1rem;
-    }
-
-    .content & {
-      width: calc(100% + 4rem);
-      margin-left: -2rem;
-      margin-right: -2rem;
-    }
-  }
 }
-
-div,
-figure,
-picture {
-  &.fig {
-    max-width: 475px;
-    margin: 0;
-  }
-}
-
-// .fig {
-//   max-width: 475px;
-//   width: 100%;
-//   margin: 0;
-// }
 
 figcaption {
   font-size: .75rem;
@@ -94,11 +52,6 @@ figcaption {
 img {
   max-width: 100%;
   height: auto;
-
-  // Forgot required alt attribute, ya dingus.
-  &:not([alt]) {
-    border: 5px solid #c00;
-  }
 }
 
 nav a {
@@ -109,48 +62,49 @@ nav a {
   }
 }
 
+code,
+pre {
+  background: none;
+  font-feature-settings: normal;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  margin-bottom: 0;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre {
+  background-color: rgb(26,26,26);
+  padding: 1rem;
+  overflow: auto;
+}
+
+code {
+  font-size: 0.75rem;
+  hyphens: none;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+p code {
+  border-radius: .3em;
+  background-color: gray;
+  font-size: 1rem;
+  color: black;
+  padding: .15em .2em .05em;
+  white-space: normal;
+}
+
 a.lightbox:hover {
   cursor: zoom-in;
 }
 
-.mxa {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.measure-wide {
-  max-width: 640px;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-}
-
-#skip-navigation {
-  position: absolute;
-  top: 0;
-}
-
-:focus:not([tabindex='-1']) {
-  outline: 4px solid var(--light-blue);
-  outline-offset: 2px;
-}
-
 ::selection {
-  background-color: var(--green);
+  background-color: var(--accent-light);
   color: var(--white);
 }

@@ -1,13 +1,15 @@
 <header>
-  <a id="skip-navigation" class="sr-only sr-only-focusable" href="#content">Skip Navigation</a>
-  <nav class="flex flex-column flex-row-ns items-center-ns justify-between-ns fw6">
-    <a class="f3 mb3 mb0-ns" href="{{ url() }}">{{ $site->title()->html() }}</a>
-    <ul class="flex list pa0 ma0 f5 smcp ttl">
-      @foreach ($pages->listed() as $page)
-        <li class="mr3 mr0-ns ml3-ns">
-          <a class="{{ $page->isOpen() ? 'active' : '' }}" href="{{ $page->url() }}">{{ $page->title()->html() }}</a>
-        </li>
-      @endforeach
-    </ul>
-  </nav>
+  <a class="sr-only focus:not-sr-only skippy" href="#content">Skip Navigation</a>
+  <div class="container">
+    <nav class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+      <a class="mb-4 sm:mb-0 text-xl" href="{{ url() }}">{{ $site->title()->html() }}</a>
+      <ul class="flex mb-0">
+        @foreach ($pages->listed() as $page)
+          <li class="mr-8 sm:mr-0 sm:ml-8">
+            <a class="{{ $page->isOpen() ? 'active' : '' }}" href="{{ $page->url() }}">{{ $page->title()->html() }}</a>
+          </li>
+        @endforeach
+      </ul>
+    </nav>
+  </div>
 </header>

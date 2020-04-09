@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "79d95727131f2188773c722da5f9888e",
+    "content-hash": "f22f6b99b9a983c55cb824e932fc4d50",
     "packages": [
         {
             "name": "beebmx/kirby-blade",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beebmx/kirby-blade.git",
-                "reference": "f5d70fda320b2f76d1b1b97ab6e1cbd14ceadb22"
+                "reference": "edd876f0aa819c8a69c0c456b45dbef3aabfd871"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beebmx/kirby-blade/zipball/f5d70fda320b2f76d1b1b97ab6e1cbd14ceadb22",
-                "reference": "f5d70fda320b2f76d1b1b97ab6e1cbd14ceadb22",
+                "url": "https://api.github.com/repos/beebmx/kirby-blade/zipball/edd876f0aa819c8a69c0c456b45dbef3aabfd871",
+                "reference": "edd876f0aa819c8a69c0c456b45dbef3aabfd871",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
                 "template",
                 "view"
             ],
-            "time": "2019-02-13T20:16:53+00:00"
+            "time": "2020-01-24T19:10:55+00:00"
         },
         {
             "name": "claviska/simpleimage",
@@ -160,16 +160,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.3.0",
+            "version": "3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "3175afeac359524da0896c4671cc9cffb08eb3e7"
+                "reference": "a7f2f9695509ad6f7e407c5214b0a7aff0b99039"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/3175afeac359524da0896c4671cc9cffb08eb3e7",
-                "reference": "3175afeac359524da0896c4671cc9cffb08eb3e7",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/a7f2f9695509ad6f7e407c5214b0a7aff0b99039",
+                "reference": "a7f2f9695509ad6f7e407c5214b0a7aff0b99039",
                 "shasum": ""
             },
             "require": {
@@ -178,12 +178,12 @@
                 "ext-mbstring": "*",
                 "filp/whoops": "2.3.1",
                 "getkirby/composer-installer": "^1.0",
+                "laminas/laminas-escaper": "2.6.0",
                 "michelf/php-smartypants": "1.8.1",
                 "mustangostang/spyc": "0.6.2",
                 "php": ">=7.1.0",
                 "phpmailer/phpmailer": "6.0.7",
-                "true/punycode": "2.1.1",
-                "zendframework/zend-escaper": "2.6.0"
+                "true/punycode": "2.1.1"
             },
             "type": "kirby-cms",
             "autoload": {
@@ -215,7 +215,7 @@
                 "core",
                 "kirby"
             ],
-            "time": "2019-11-05T08:14:24+00:00"
+            "time": "2020-03-17T13:15:27+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -256,42 +256,149 @@
             "time": "2019-02-11T20:27:36+00:00"
         },
         {
-            "name": "k-community/markdown-field",
-            "version": "1.0.3",
+            "name": "getkirby/editor",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sylvainjule/kirby-markdown-field.git",
-                "reference": "80321b8392fcce113cfe02f59a68dfef7a4564e5"
+                "url": "https://github.com/getkirby/editor.git",
+                "reference": "ab855dcb573ff211e8f77e70e11ae1161002d29a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sylvainjule/kirby-markdown-field/zipball/80321b8392fcce113cfe02f59a68dfef7a4564e5",
-                "reference": "80321b8392fcce113cfe02f59a68dfef7a4564e5",
+                "url": "https://api.github.com/repos/getkirby/editor/zipball/ab855dcb573ff211e8f77e70e11ae1161002d29a",
+                "reference": "ab855dcb573ff211e8f77e70e11ae1161002d29a",
                 "shasum": ""
             },
             "require": {
-                "getkirby/composer-installer": "^1.1"
+                "getkirby/composer-installer": "^1.1",
+                "paquettg/php-html-parser": "^2.1",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "getkirby/cms": "^3.3"
             },
             "type": "kirby-plugin",
-            "extra": {
-                "installer-name": "markdown-field"
-            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "proprietary"
             ],
             "authors": [
                 {
-                    "name": "Sylvain Julé",
-                    "email": "contact@sylvain-jule.fr"
-                },
-                {
-                    "name": "Fabian Michael",
-                    "email": "hallo@fabianmichael.de"
+                    "name": "Bastian Allgeier",
+                    "email": "bastian@getkirby.com"
                 }
             ],
-            "description": "Enhanced markdown editor for Kirby 3",
-            "time": "2019-10-31T16:13:45+00:00"
+            "description": "Kirby Editor",
+            "homepage": "https://getkirby.com",
+            "keywords": [
+                "cms",
+                "editor",
+                "kirby",
+                "plugin",
+                "wysiwyg"
+            ],
+            "time": "2020-02-18T09:22:09+00:00"
+        },
+        {
+            "name": "laminas/laminas-escaper",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-escaper.git",
+                "reference": "72d3a14647f6234cdd9386d6de821a98e539af91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-escaper/zipball/72d3a14647f6234cdd9386d6de821a98e539af91",
+                "reference": "72d3a14647f6234cdd9386d6de821a98e539af91",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-zendframework-bridge": "^1.0",
+                "php": "^5.6 || ^7.0"
+            },
+            "replace": {
+                "zendframework/zend-escaper": "self.version"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~1.0.0",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6.x-dev",
+                    "dev-develop": "2.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Escaper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Securely and safely escape HTML, HTML attributes, JavaScript, CSS, and URLs",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "escaper",
+                "laminas"
+            ],
+            "time": "2019-12-31T16:43:29+00:00"
+        },
+        {
+            "name": "laminas/laminas-zendframework-bridge",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
+                "reference": "faf68f6109ceeff24241226033ab59640c7eb63b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/faf68f6109ceeff24241226033ab59640c7eb63b",
+                "reference": "faf68f6109ceeff24241226033ab59640c7eb63b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.1",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev",
+                    "dev-develop": "1.1.x-dev"
+                },
+                "laminas": {
+                    "module": "Laminas\\ZendFrameworkBridge"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/autoload.php"
+                ],
+                "psr-4": {
+                    "Laminas\\ZendFrameworkBridge\\": "src//"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Alias legacy ZF class names to Laminas Project equivalents.",
+            "keywords": [
+                "ZendFramework",
+                "autoloading",
+                "laminas",
+                "zf"
+            ],
+            "time": "2020-03-26T16:07:12+00:00"
         },
         {
             "name": "league/color-extractor",
@@ -446,6 +553,106 @@
                 "yml"
             ],
             "time": "2017-02-24T16:06:33+00:00"
+        },
+        {
+            "name": "paquettg/php-html-parser",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paquettg/php-html-parser.git",
+                "reference": "668c770fc5724ea3f15b8791435f054835be8d5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paquettg/php-html-parser/zipball/668c770fc5724ea3f15b8791435f054835be8d5e",
+                "reference": "668c770fc5724ea3f15b8791435f054835be8d5e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-mbstring": "*",
+                "ext-zlib": "*",
+                "paquettg/string-encode": "~1.0.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "infection/infection": "^0.13.4",
+                "mockery/mockery": "^1.2",
+                "phan/phan": "^2.4",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^7.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPHtmlParser\\": "src/PHPHtmlParser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gilles Paquette",
+                    "email": "paquettg@gmail.com",
+                    "homepage": "http://gillespaquette.ca"
+                }
+            ],
+            "description": "An HTML DOM parser. It allows you to manipulate HTML. Find tags on an HTML page with selectors just like jQuery.",
+            "homepage": "https://github.com/paquettg/php-html-parser",
+            "keywords": [
+                "dom",
+                "html",
+                "parser"
+            ],
+            "time": "2020-01-20T12:59:15+00:00"
+        },
+        {
+            "name": "paquettg/string-encode",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paquettg/string-encoder.git",
+                "reference": "a8708e9fac9d5ddfc8fc2aac6004e2cd05d80fee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paquettg/string-encoder/zipball/a8708e9fac9d5ddfc8fc2aac6004e2cd05d80fee",
+                "reference": "a8708e9fac9d5ddfc8fc2aac6004e2cd05d80fee",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "stringEncode": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gilles Paquette",
+                    "email": "paquettg@gmail.com",
+                    "homepage": "http://gillespaquette.ca"
+                }
+            ],
+            "description": "Facilitating the process of altering string encoding in PHP.",
+            "homepage": "https://github.com/paquettg/string-encoder",
+            "keywords": [
+                "charset",
+                "encoding",
+                "string"
+            ],
+            "time": "2018-12-21T02:25:09+00:00"
         },
         {
             "name": "pedroborges/kirby-meta-tags",
@@ -613,16 +820,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801"
+                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
-                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
                 "shasum": ""
             },
             "require": {
@@ -656,20 +863,20 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2019-11-01T11:05:21+00:00"
+            "time": "2020-03-23T09:12:05+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.12.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17"
+                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
-                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
+                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
                 "shasum": ""
             },
             "require": {
@@ -681,7 +888,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12-dev"
+                    "dev-master": "1.15-dev"
                 }
             },
             "autoload": {
@@ -715,7 +922,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-08-06T08:03:45+00:00"
+            "time": "2020-03-09T19:04:49+00:00"
         },
         {
             "name": "true/punycode",
@@ -762,51 +969,6 @@
                 "punycode"
             ],
             "time": "2016-11-16T10:37:54+00:00"
-        },
-        {
-            "name": "zendframework/zend-escaper",
-            "version": "2.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/zend-escaper.git",
-                "reference": "31d8aafae982f9568287cb4dce987e6aff8fd074"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-escaper/zipball/31d8aafae982f9568287cb4dce987e6aff8fd074",
-                "reference": "31d8aafae982f9568287cb4dce987e6aff8fd074",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2",
-                "zendframework/zend-coding-standard": "~1.0.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6.x-dev",
-                    "dev-develop": "2.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Zend\\Escaper\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Securely and safely escape HTML, HTML attributes, JavaScript, CSS, and URLs",
-            "keywords": [
-                "ZendFramework",
-                "escaper",
-                "zf"
-            ],
-            "time": "2018-04-25T15:48:53+00:00"
         }
     ],
     "packages-dev": [],

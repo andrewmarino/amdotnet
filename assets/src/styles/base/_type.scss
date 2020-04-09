@@ -1,75 +1,47 @@
-@font-face {
-  font-family: 'source_serif_prosemibold';
-  src: url('../fonts/sourceserifpro-semibold-webfont.woff2') format('woff2'),
-    url('../fonts/sourceserifpro-semibold-webfont.woff') format('woff');
-  font-style: normal;
-  font-weight: 600;
-}
-
-.serrfs {
+.serif {
   font-family: 'Georgia', serif;
-
-  .fonts-loaded & {
-    font-family: 'source_serif_prosemibold', 'Georgia', serif;
-  }
 }
 
-.smcp {
-  font-feature-settings: 'smcp', 'zero';
+.sans-serif {
+  font-family: 'Chivo', sans-serif;
 }
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
-  @extend .serrfs;
-  @extend .lh-title;
-  @extend .mb0;
+h3 {
+  @extend .serif;
+  line-height: 1.25;
+  font-weight: 400;
   color: inherit;
 }
 
-h1 {
-  @extend .f2;
+h1, .h1 {
+  @apply text-4xl;
 }
 
-h2 {
-  @extend .f3;
+h2, .h2 {
+  @apply text-2xl;
 }
 
-h3 {
-  @extend .f4;
-}
-
-main {
-  ul,
-  ol,
-  p {
-    margin-top: 0;
-  }
-
-  ul {
-    list-style-type: square;
-  }
-}
-
-blockquote {
-  @extend .pl3;
-  @extend .bl;
-  @extend .bw2;
-  @extend .ml0;
-  @extend .mt0;
-  @extend .f4;
-  font-style: italic;
-  border-color: var(--white);
+h3, .h3 {
+  @apply text-xl;
 }
 
 abbr {
-  @extend .serrfs;
+  @extend .serif;
   letter-spacing: .75px;
 
   &[title] {
     text-decoration: none;
   }
+}
+
+blockquote {
+  @extend .serif;
+  font-size: 1.5rem;
+}
+
+time {
+  display: block;
+  font-style: italic;
 }

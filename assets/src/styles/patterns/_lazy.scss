@@ -5,7 +5,10 @@
   transition: opacity 300ms;
 }
 
-.no-js .lazyload,
+.no-js .lazyload {
+  display: none;
+}
+
 .lazyloaded {
   color: inherit;
   opacity: 1;

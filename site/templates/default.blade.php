@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="mxa content measure-wide w-100 lh-copy f5">
-  <h1 class="mt0">{{ $page->title() }}</h1>
+<section class="content max-w-3xl mx-auto">
+  <h1 class="mt-0">{{ $page->title() }}</h1>
+  @if ($page->date())
+    <time datetime="{{ $page->date()->toDate('c') }}">
+      {{ $page->date()->toDate('F jS, Y') }}
+    </time>
+  @endif
   @kirbytext($page->text()->blocks())
 </section>
 @endsection

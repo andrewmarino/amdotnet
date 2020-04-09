@@ -6,7 +6,11 @@ tabs:
     columns:
       - width: 2/3
         sections:
-          projects: sections/projects
+          projects:
+            extends: sections/projects
+            headline: Projects
+            layout: cards
+            status: published
       - width: 1/3
         sections:
           pages:
