@@ -8,7 +8,7 @@
   </header>
   <section class="macy">
     @foreach ($projects as $project)
-      @if ($photo = $project->cover()->toFile())
+      @if ($photo = $project->coverImage())
         <a class="overlay" href="{{ $project->url() }}">
           <div class="overlay__content">
             <h2>{{ $project->title()->html() }}</h2>
