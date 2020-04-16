@@ -1,5 +1,5 @@
-@import "~tailwindcss/base";
-@import "~tailwindcss/components";
+@import '~tailwindcss/base';
+@import '~tailwindcss/components';
 
 @import 'base/_var';
 @import 'base/_global';
@@ -7,11 +7,10 @@
 @import 'base/_type';
 @import 'base/_content';
 
-@import 'patterns/_lazy';
 @import 'patterns/_overlay';
 @import 'patterns/_ratio-container';
 
 @import '~rqrauhvmra__tobi/scss/tobi';
 @import 'lib/_tobi';
 
-@import "~tailwindcss/utilities";
+@import '~tailwindcss/utilities';

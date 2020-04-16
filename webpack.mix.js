@@ -3,7 +3,6 @@ const tailwindcss = require('tailwindcss');
 require('laravel-mix-imagemin');
 const glob = require('fast-glob');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
-const LaravelMixExtractor = require('./assets/src/build/LaravelMixExtractor');
 
 /**
  * Asset directory paths.
@@ -80,10 +79,10 @@ if (mix.inProduction()) {
         extractors: [
           {
             extensions: ['html', 'js', 'php'],
-            extractor: LaravelMixExtractor,
+            extractor: content => content.match(/[A-Za-z0-9-_:\/]+/g) || [],
           },
         ],
-        whitelistPatterns: [/^tobi/, /^ls-/],
+        whitelistPatternsChildren: [/^tobi/],
       }),
     ],
   });
