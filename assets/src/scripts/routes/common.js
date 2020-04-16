@@ -1,8 +1,13 @@
 import FontFaceObserver from 'fontfaceobserver';
+import LazyLoad from 'vanilla-lazyload';
 
 export default {
   init() {
     document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');
+
+    let lazyLoadInstance = new LazyLoad({
+      elements_selector: '.lazy',
+    });
   },
   finalize() {
     let fontFamilies = {

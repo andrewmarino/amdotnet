@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "fontfaceobserver": "^2.1.0",
-    "lazysizes": "^5.1.2",
     "macy": "^2.5.0",
     "picturefill": "^3.0.3",
-    "rqrauhvmra__tobi": "^1.8.1"
+    "rqrauhvmra__tobi": "^1.8.1",
+    "vanilla-lazyload": "^15.1.1"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.1.1",

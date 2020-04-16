@@ -1,13 +1,12 @@
-@php $aspect_ratio = round($photo->dimensions()->ratio(), 2) @endphp
-
-<div class="ratio-container fig ma0 pa0" data-aspect-ratio="{{ $aspect_ratio }}">
+<picture class="ratio-container fig ma0 pa0 max-w-xl" data-aspect-ratio="{{ round($photo->dimensions()->ratio(), 2) }}">
   <img
-    class="lazy lazyload"
-    data-sizes="auto"
-    data-aspectratio="{{ $aspect_ratio }}"
-    data-lowsrc="{{ $photo->thumb('lowsrc')->url() }}"
+    class="lazy"
+    src="{{ $photo->thumb('lowsrc')->url() }}"
     data-srcset="{{ $photo->srcset([275 => '1x', 500 => '2x']) }}"
     data-caption="{{ $photo->caption() }}"
     alt="{{ $photo->alt() }}"
   />
-</div>
+  <noscript>
+    <img src="{{ $photo->src() }}" srcset="{{ $photo->srcset([275 => '1x', 500 => '2x']) }}" alt="{{ $photo->alt() }}" />
+  </noscript>
+</picture>
