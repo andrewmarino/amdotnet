@@ -12,7 +12,6 @@
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
-    "fontfaceobserver": "^2.1.0",
     "macy": "^2.5.0",
     "picturefill": "^3.0.3",
     "rqrauhvmra__tobi": "^1.8.1",
