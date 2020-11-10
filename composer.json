@@ -1,9 +1,9 @@
 {
   "require": {
-    "php": ">=7.1.0",
+    "php": ">=7.2.0 <7.5.0",
     "getkirby/cms": "^3.4",
     "getkirby/editor": "^1.0",
-    "beebmx/kirby-blade": "^1.0",
+    "beebmx/kirby-blade": "^2.0",
     "pedroborges/kirby-meta-tags": "^2.0"
   },
   "config": {
