@@ -10,7 +10,7 @@ columns:
         type:  text
       text:
         label: Text
-        type:  editor
+        type:  blocks
   - width: 2/3
     sections:
       listed:
