@@ -6,5 +6,15 @@ module.exports = {
     colors: {}
   },
   variants: {},
-  plugins: []
+  plugins: [],
+  purge: {
+    content: [
+      './assets/src/scripts/**/*.js',
+      './site/snippets/**/*.blade.php',
+      './site/templates/**/*.blade.php',
+    ],
+    options: {
+      safelist: [/^tobi/],
+    },
+  },
 }
