@@ -4,29 +4,29 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7dd7a06811d3d7b7659aec860d740571",
+    "content-hash": "197ee7f376b2461adf607032a906a1be",
     "packages": [
         {
             "name": "beebmx/kirby-blade",
-            "version": "2.1.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beebmx/kirby-blade.git",
-                "reference": "4a839721c9e65fe0bc1ec68310b88527bec8891c"
+                "reference": "b736257b5b2738324721f45f9ea50891f7788d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beebmx/kirby-blade/zipball/4a839721c9e65fe0bc1ec68310b88527bec8891c",
-                "reference": "4a839721c9e65fe0bc1ec68310b88527bec8891c",
+                "url": "https://api.github.com/repos/beebmx/kirby-blade/zipball/b736257b5b2738324721f45f9ea50891f7788d6d",
+                "reference": "b736257b5b2738324721f45f9ea50891f7788d6d",
                 "shasum": ""
             },
             "require": {
-                "getkirby/composer-installer": "^1.1",
-                "php": "^7.3"
+                "getkirby/composer-installer": "^1.2",
+                "php": "^7.3|^8.0"
             },
             "require-dev": {
-                "illuminate/view": "^7.0",
-                "jenssegers/blade": "^1.3"
+                "illuminate/view": "^8.0",
+                "jenssegers/blade": "^1.4"
             },
             "type": "kirby-plugin",
             "autoload": {
@@ -47,7 +47,7 @@
                     "email": "fernando@beeb.mx"
                 }
             ],
-            "description": "Enable Blade for Kirby 3",
+            "description": "Blade template for Kirby 3",
             "keywords": [
                 "blade",
                 "kirby",
@@ -57,9 +57,9 @@
             ],
             "support": {
                 "issues": "https://github.com/beebmx/kirby-blade/issues",
-                "source": "https://github.com/beebmx/kirby-blade/tree/2.1.0"
+                "source": "https://github.com/beebmx/kirby-blade/tree/3.0.0"
             },
-            "time": "2020-05-05T16:56:38+00:00"
+            "time": "2021-02-06T05:02:14+00:00"
         },
         {
             "name": "claviska/simpleimage",
@@ -177,16 +177,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.5.0",
+            "version": "3.5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "0d2751af7cb478df14f30fac47fe9a2cd3b38114"
+                "reference": "38afb2d650f3764d23d732b23ae8f04ab9ffba69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/0d2751af7cb478df14f30fac47fe9a2cd3b38114",
-                "reference": "0d2751af7cb478df14f30fac47fe9a2cd3b38114",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/38afb2d650f3764d23d732b23ae8f04ab9ffba69",
+                "reference": "38afb2d650f3764d23d732b23ae8f04ab9ffba69",
                 "shasum": ""
             },
             "require": {
@@ -204,15 +204,16 @@
             },
             "type": "kirby-cms",
             "autoload": {
-                "files": [
-                    "config/setup.php"
-                ],
+                "psr-4": {
+                    "Kirby\\": "src/"
+                },
                 "classmap": [
                     "dependencies/"
                 ],
-                "psr-4": {
-                    "Kirby\\": "src/"
-                }
+                "files": [
+                    "config/setup.php",
+                    "config/helpers.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -244,28 +245,27 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-12-15T08:09:43+00:00"
+            "time": "2021-02-24T16:10:44+00:00"
         },
         {
             "name": "getkirby/composer-installer",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/composer-installer.git",
-                "reference": "240a8b2c275d61b66601feb58222b7d34bc6cf1e"
+                "reference": "c98ece30bfba45be7ce457e1102d1b169d922f3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/240a8b2c275d61b66601feb58222b7d34bc6cf1e",
-                "reference": "240a8b2c275d61b66601feb58222b7d34bc6cf1e",
+                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/c98ece30bfba45be7ce457e1102d1b169d922f3d",
+                "reference": "c98ece30bfba45be7ce457e1102d1b169d922f3d",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0"
             },
             "require-dev": {
-                "composer/composer": "^1.8 || 2.0.*@dev",
-                "phpunit/phpunit": "^7.0"
+                "composer/composer": "^1.8 || ^2.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -284,55 +284,7 @@
             "homepage": "https://getkirby.com",
             "support": {
                 "issues": "https://github.com/getkirby/composer-installer/issues",
-                "source": "https://github.com/getkirby/composer-installer/tree/1.2.0"
-            },
-            "time": "2020-09-13T14:43:34+00:00"
-        },
-        {
-            "name": "getkirby/editor",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/getkirby/editor.git",
-                "reference": "1d19e9c8acad5125ddb6208ba109f7e2f0510eb9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/editor/zipball/1d19e9c8acad5125ddb6208ba109f7e2f0510eb9",
-                "reference": "1d19e9c8acad5125ddb6208ba109f7e2f0510eb9",
-                "shasum": ""
-            },
-            "require": {
-                "getkirby/composer-installer": "^1.1",
-                "paquettg/php-html-parser": "^2.1",
-                "php": ">=7.2.0"
-            },
-            "require-dev": {
-                "getkirby/cms": "^3.3"
-            },
-            "type": "kirby-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Bastian Allgeier",
-                    "email": "bastian@getkirby.com"
-                }
-            ],
-            "description": "Kirby Editor",
-            "homepage": "https://getkirby.com",
-            "keywords": [
-                "cms",
-                "editor",
-                "kirby",
-                "plugin",
-                "wysiwyg"
-            ],
-            "support": {
-                "issues": "https://github.com/getkirby/editor/issues",
-                "source": "https://github.com/getkirby/editor/tree/develop"
+                "source": "https://github.com/getkirby/composer-installer/tree/1.2.1"
             },
             "funding": [
                 {
@@ -340,7 +292,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-07-09T16:09:55+00:00"
+            "time": "2020-12-28T12:54:39+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -407,24 +359,26 @@
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
-                "reference": "6ede70583e101030bcace4dcddd648f760ddf642"
+                "reference": "6cccbddfcfc742eb02158d6137ca5687d92cee32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/6ede70583e101030bcace4dcddd648f760ddf642",
-                "reference": "6ede70583e101030bcace4dcddd648f760ddf642",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/6cccbddfcfc742eb02158d6137ca5687d92cee32",
+                "reference": "6cccbddfcfc742eb02158d6137ca5687d92cee32",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6 || ^7.0 || ^8.0"
+                "php": "^7.3 || ^8.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.1 || ^9.3",
-                "squizlabs/php_codesniffer": "^3.5"
+                "psalm/plugin-phpunit": "^0.15.1",
+                "squizlabs/php_codesniffer": "^3.5",
+                "vimeo/psalm": "^4.6"
             },
             "type": "library",
             "extra": {
@@ -463,7 +417,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2020-09-14T14:23:00+00:00"
+            "time": "2021-02-25T21:54:58+00:00"
         },
         {
             "name": "league/color-extractor",
@@ -628,220 +582,6 @@
             "time": "2019-09-10T13:16:29+00:00"
         },
         {
-            "name": "paquettg/php-html-parser",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paquettg/php-html-parser.git",
-                "reference": "668c770fc5724ea3f15b8791435f054835be8d5e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paquettg/php-html-parser/zipball/668c770fc5724ea3f15b8791435f054835be8d5e",
-                "reference": "668c770fc5724ea3f15b8791435f054835be8d5e",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-mbstring": "*",
-                "ext-zlib": "*",
-                "paquettg/string-encode": "~1.0.0",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "infection/infection": "^0.13.4",
-                "mockery/mockery": "^1.2",
-                "phan/phan": "^2.4",
-                "php-coveralls/php-coveralls": "^2.1",
-                "phpunit/phpunit": "^7.5.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PHPHtmlParser\\": "src/PHPHtmlParser"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gilles Paquette",
-                    "email": "paquettg@gmail.com",
-                    "homepage": "http://gillespaquette.ca"
-                }
-            ],
-            "description": "An HTML DOM parser. It allows you to manipulate HTML. Find tags on an HTML page with selectors just like jQuery.",
-            "homepage": "https://github.com/paquettg/php-html-parser",
-            "keywords": [
-                "dom",
-                "html",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/paquettg/php-html-parser/issues",
-                "source": "https://github.com/paquettg/php-html-parser/tree/2.2.1"
-            },
-            "time": "2020-01-20T12:59:15+00:00"
-        },
-        {
-            "name": "paquettg/string-encode",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paquettg/string-encoder.git",
-                "reference": "a8708e9fac9d5ddfc8fc2aac6004e2cd05d80fee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paquettg/string-encoder/zipball/a8708e9fac9d5ddfc8fc2aac6004e2cd05d80fee",
-                "reference": "a8708e9fac9d5ddfc8fc2aac6004e2cd05d80fee",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.5.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "stringEncode": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gilles Paquette",
-                    "email": "paquettg@gmail.com",
-                    "homepage": "http://gillespaquette.ca"
-                }
-            ],
-            "description": "Facilitating the process of altering string encoding in PHP.",
-            "homepage": "https://github.com/paquettg/string-encoder",
-            "keywords": [
-                "charset",
-                "encoding",
-                "string"
-            ],
-            "support": {
-                "issues": "https://github.com/paquettg/string-encoder/issues",
-                "source": "https://github.com/paquettg/string-encoder/tree/1.0.1"
-            },
-            "time": "2018-12-21T02:25:09+00:00"
-        },
-        {
-            "name": "pedroborges/kirby-meta-tags",
-            "version": "v2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pedroborges/kirby-meta-tags.git",
-                "reference": "0d20d2ce60e207def3a90dd1aac9eb13be1d2823"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pedroborges/kirby-meta-tags/zipball/0d20d2ce60e207def3a90dd1aac9eb13be1d2823",
-                "reference": "0d20d2ce60e207def3a90dd1aac9eb13be1d2823",
-                "shasum": ""
-            },
-            "require": {
-                "getkirby/composer-installer": "^1.1",
-                "pedroborges/meta-tags": "^0.0.2",
-                "php": ">=7.1.0"
-            },
-            "type": "kirby-plugin",
-            "extra": {
-                "installer-name": "meta-tags"
-            },
-            "autoload": {
-                "files": [
-                    "helpers.php"
-                ],
-                "psr-4": {
-                    "PedroBorges\\KirbyMetaTags\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Pedro Borges",
-                    "email": "oi@pedroborg.es"
-                }
-            ],
-            "description": "HTML meta tags generator for Kirby 3.",
-            "homepage": "https://github.com/pedroborges/kirby-meta-tags",
-            "keywords": [
-                "JSON-LD",
-                "kirby-plugin",
-                "meta-tags",
-                "open-graph",
-                "twitter-cards"
-            ],
-            "support": {
-                "issues": "https://github.com/pedroborges/kirby-meta-tags/issues",
-                "source": "https://github.com/pedroborges/kirby-meta-tags/tree/master"
-            },
-            "time": "2019-02-22T13:24:16+00:00"
-        },
-        {
-            "name": "pedroborges/meta-tags",
-            "version": "v0.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pedroborges/meta-tags.git",
-                "reference": "e6259f598019ab44f12c0e15d4b465d00b4d39cb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pedroborges/meta-tags/zipball/e6259f598019ab44f12c0e15d4b465d00b4d39cb",
-                "reference": "e6259f598019ab44f12c0e15d4b465d00b4d39cb",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PedroBorges\\MetaTags\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Pedro Borges",
-                    "email": "oi@pedroborg.es"
-                }
-            ],
-            "description": "HTML meta tags generator for PHP.",
-            "homepage": "https://github.com/pedroborges/meta-tags",
-            "keywords": [
-                "facebook",
-                "head",
-                "meta",
-                "meta tags",
-                "open graph",
-                "seo",
-                "twitter cards"
-            ],
-            "support": {
-                "issues": "https://github.com/pedroborges/meta-tags/issues",
-                "source": "https://github.com/pedroborges/meta-tags/tree/v0.0.2"
-            },
-            "time": "2018-07-07T18:21:26+00:00"
-        },
-        {
             "name": "phpmailer/phpmailer",
             "version": "v6.2.0",
             "source": {
@@ -969,16 +709,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.20.0",
+            "version": "v1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "39d483bdf39be819deabf04ec872eb0b2410b531"
+                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/39d483bdf39be819deabf04ec872eb0b2410b531",
-                "reference": "39d483bdf39be819deabf04ec872eb0b2410b531",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/5232de97ee3b75b0360528dae24e73db49566ab1",
+                "reference": "5232de97ee3b75b0360528dae24e73db49566ab1",
                 "shasum": ""
             },
             "require": {
@@ -990,7 +730,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.20-dev"
+                    "dev-main": "1.22-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1029,7 +769,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.20.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.22.1"
             },
             "funding": [
                 {
@@ -1045,7 +785,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-23T14:02:19+00:00"
+            "time": "2021-01-22T09:19:47+00:00"
         },
         {
             "name": "true/punycode",
@@ -1105,7 +845,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.0 <7.5.0"
+        "php": ">=8.0.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
