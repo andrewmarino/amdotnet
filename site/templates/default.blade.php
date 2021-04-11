@@ -8,6 +8,8 @@
       {{ $page->date()->toDate('F jS, Y') }}
     </time>
   @endif
-  @kirbytext($page->text()->blocks())
+  @foreach ($page->blocks()->toBlocks() as $block)
+    {!! $block !!}
+  @endforeach
 </section>
 @endsection

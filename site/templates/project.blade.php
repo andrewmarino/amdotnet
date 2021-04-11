@@ -4,7 +4,7 @@
 <div class="max-w-3xl mx-auto">
   <header class="content mb-10">
     <h1 class="mt-0">{{ $page->title() }}</h1>
-    @kirbytext($page->text()->blocks())
+    @kirbytext($page->text()->toBlocks())
   </header>
   <section class="macy">
     @foreach ($photos as $photo)
