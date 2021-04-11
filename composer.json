@@ -2,7 +2,6 @@
   "require": {
     "php": ">=8.0.0",
     "getkirby/cms": "^3.5",
-    "getkirby/editor": "^1.0",
     "beebmx/kirby-blade": "^3.0"
   },
   "config": {

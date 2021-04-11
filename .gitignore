@@ -55,4 +55,3 @@ Icon
 # Kirby plugins handled by Composer
 # ---------------
 /site/plugins/kirby-blade
-/site/plugins/markdown-field
