@@ -1,3 +1,6 @@
+// import global dependencies
+import 'focus-visible';
+
 // import local dependencies
 import Router from './util/Router';
 import Routes from './routes/index';

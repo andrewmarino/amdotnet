@@ -9,10 +9,19 @@ a[href^='http']:not([href*='andrewmarino.net'])::after {
   left: 0.25rem;
 }
 
-:focus:not([tabindex='-1']) {
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.js-focus-visible .focus-visible {
   outline: 2px solid var(--accent-dark);
   outline-offset: 3px;
 }
+
+// :focus:not([tabindex='-1']) {
+//   outline: 2px solid var(--accent-dark);
+//   outline-offset: 3px;
+// }
 
 @media (prefers-color-scheme: light) {
   body {
