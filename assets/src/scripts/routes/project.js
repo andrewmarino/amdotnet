@@ -1,9 +1,9 @@
-import Tobi from 'rqrauhvmra__tobi';
+import Tobii from '@midzer/tobii';
 import icons from '../icons/icons';
 
 export default {
   finalize() {
-    new Tobi({
+    const tobii = new Tobii({
       captionAttribute: 'data-caption',
       closeText: icons.tobi_close,
       docClose: false,

@@ -1,32 +1,33 @@
-.tobi {
+.tobii {
   background-color: var(--eigengrau);
 }
 
-.tobi button {
-  &.tobi__prev,
-  &.tobi__next,
-  &.tobi__close {
-    svg {
-      width: 28px;
-      height: 28px;
+.tobii__btn {
+  > svg {
+    width: 28px;
+    height: 28px;
+
+    @media screen and (min-width: 768px) {
+      width: 36px;
+      height: 36px;
     }
   }
 
-  &.tobi__prev {
+  &--prev {
     left: 8px;
   }
 
-  &.tobi__next {
+  &--next {
     right: 8px;
   }
 
-  &.tobi__close {
+  &--close {
     right: .5rem;
     top: .5rem;
   }
 }
 
-.tobi__counter {
+.tobii__counter {
   font-size: 1rem;
   font-feature-settings: 'smcp';
   height: auto;
@@ -34,26 +35,32 @@
   left: 1rem;
 }
 
-.tobi__slider__slide__content > figure {
-  max-width: 100%;
-}
-
-.tobi__slider__slide__content > figure > img {
-  max-height: 75vh;
-  max-width: 75vw;
-  margin-bottom: 1rem;
-
-  @media (--breakpoint-not-small) {
-    max-height: 80vh;
-    max-width: 600px;
+.tobii__slide {
+  > div[data-type="image"] {
+    overflow: visible !important;
   }
-}
 
-.tobi__slider__slide__content > figure > figcaption {
-  position: relative;
-  background-color: transparent;
-  color: var(--white);
-  padding: 0;
-  margin-top: .5rem;
-  text-align: center;
+  figure {
+    max-width: 100%;
+  }
+
+  figure > figcaption {
+    position: relative;
+    background-color: transparent;
+    color: var(--white);
+    padding: 0;
+    margin-top: .5rem;
+    text-align: center;
+  }
+
+  figure > img {
+    max-height: 75vh;
+    max-width: 75vw;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 768px) {
+      max-height: 80vh;
+      max-width: 600px;
+    }
+  }
 }
