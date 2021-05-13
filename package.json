@@ -17,9 +17,9 @@
   },
   "browserslist": "last 2 versions",
   "dependencies": {
-    "@midzer/tobii": "^2.1.0",
     "focus-visible": "^5.2.0",
     "macy": "^2.5.0",
+    "parvus": "^1.4.0",
     "vanilla-lazyload": "^15.1.1"
   },
   "devDependencies": {

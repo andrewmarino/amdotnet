@@ -1,0 +1,30 @@
+.parvus__btn,
+.parvus__overlay {
+  background-color: var(--eigengrau);
+  color: var(--white);
+}
+
+.parvus-zoom__indicator {
+  display: none;
+}
+
+.parvus-trigger {
+  color: var(--white);
+}
+
+.parvus__btn:hover {
+  background-color: transparent;
+}
+
+.parvus__btn:focus-visible,
+.parvus-trigger:focus-visible {
+  outline-color: currentColor;
+}
+
+@media (prefers-color-scheme: light) {
+  .parvus__btn,
+  .parvus__overlay {
+    background-color: var(--white);
+    color: var(--eigengrau);
+  }
+}
