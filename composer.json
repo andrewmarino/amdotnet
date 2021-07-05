@@ -2,7 +2,8 @@
   "require": {
     "php": ">=8.0.0",
     "getkirby/cms": "^3.5",
-    "beebmx/kirby-blade": "^3.0"
+    "beebmx/kirby-blade": "^3.0",
+    "pedroborges/kirby-meta-tags": "^2.0"
   },
   "config": {
     "optimize-autoloader": true
